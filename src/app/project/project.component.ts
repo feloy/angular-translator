@@ -82,4 +82,8 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.source = src;
     this.projects.setCurrentSource(src);
   }
+
+  public exportAs(fmt: 'xmb' | 'xliff') {
+    console.log('export as ' + fmt);
+  }
 }

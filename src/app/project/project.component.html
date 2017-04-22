@@ -1,8 +1,11 @@
 <md-toolbar>{{project.name}}
   <span class="app-fill-remaining-space"></span>
   <button (click)="onReload()" md-icon-button title="Reload source"><md-icon>autorenew</md-icon></button>
-  <button (click)="onExport()" md-icon-button title="Export current translation" [disabled]="!translation"><md-icon>file_download</md-icon></button>
-
+  <button md-icon-button title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
+  <md-menu #exportMenu="mdMenu">
+    <button md-menu-item (click)="exportAs('xmb')">Export as XMB</button>
+    <button md-menu-item (click)="exportAs('xliff')">Export as Xliff</button>
+  </md-menu>
 </md-toolbar>
 <div class="main">
   <div class="info">
