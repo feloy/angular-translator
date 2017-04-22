@@ -1,5 +1,5 @@
 import { Translation } from './../models/translation';
-import { Source } from './../models/source';
+import { Source, Msg } from './../models/source';
 import { BackendService } from './backend.service';
 import { Project } from './../models/project';
 import { Injectable } from '@angular/core';
@@ -12,6 +12,7 @@ export class ProjectsService {
   private projects: Project[];
 
   public currentTranslation$ = new ReplaySubject<Translation>(1);
+  private currentTranslation: Translation;
   public currentSource$ = new ReplaySubject<Source>(1);
 
   constructor(private backend: BackendService) {
@@ -37,7 +38,13 @@ export class ProjectsService {
   }
 
   public setCurrentTranslation(tr: Translation) {
+    this.currentTranslation = tr;
     this.currentTranslation$.next(tr);
+  }
+
+  public setTranslatedMsg(id: string, value: string) {
+    this.currentTranslation.msgs.filter( (m: Msg) => m.id === id)[0].content = value;
+    this.currentTranslation$.next(this.currentTranslation);
   }
 
   public setCurrentSource(src: Source) {

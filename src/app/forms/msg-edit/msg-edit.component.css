@@ -2,3 +2,4 @@ md-card { margin: 16px 0; padding: 8px; }
 .taflex { display: flex; }
 .taflex > textarea { margin: 8px; padding: 4px; flex-grow: 1; font-size: 20px; }
 md-input-container > textarea { height: 100%; }
+.buttons { text-align: right; }

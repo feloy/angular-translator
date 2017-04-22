@@ -1,6 +1,12 @@
 <md-card *ngIf="trMsg !== null && srcMsg !== null">
-  <div class="taflex">
-    <textarea readonly [value]="srcMsg?.content"></textarea>
-    <textarea [value]="trMsg?.content"></textarea>
-  </div>
+  <form [formGroup]="form">
+    <div class="taflex">
+      <textarea readonly formControlName="src"></textarea>
+      <textarea formControlName="tr"></textarea>
+    </div>
+    <div class="buttons">
+      <button md-button (click)="onCancel()" *ngIf="!form.pristine">Cancel</button>
+      <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine">Save</button>
+    </div>
+  </form>
 </md-card>
