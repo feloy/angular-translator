@@ -1,0 +1,22 @@
+<div class="main">
+  <h2>Create new project</h2>
+
+  <form [formGroup]="form">
+    <md-input-container>
+      <input mdInput placeholder="name" formControlName="name">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="github repo" formControlName="repo">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="i18n directory" formControlName="i18ndir">
+    </md-input-container>
+    <md-input-container>
+      <input mdInput placeholder="source file name" formControlName="source">
+    </md-input-container>
+    <div class="buttons">
+      <button md-button (click)="onCancel()">Cancel</button>
+      <button md-raised-button color="primary" (click)="onAdd()" [disabled]="!form.valid || form.pristine">Add</button>
+    </div>
+  </form>
+</div>
