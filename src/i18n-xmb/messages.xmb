@@ -24,6 +24,7 @@
   <msg id="2496243157667362625" desc="App title"><source>app/frame/frame.component.ts:6</source>Angular Translator</msg>
   <msg id="2821179408673282599" desc="Back to home page entry in sidenav"><source>app/frame-sidenav/frame-sidenav.component.ts:5</source>Home</msg>
   <msg id="8786323189771711024" desc="Add a new project in sidenav"><source>app/frame-sidenav/frame-sidenav.component.ts:15</source>New project...</msg>
+  <msg id="6715766486858313263" desc="subheader in sidenav for interface languages"><source>app/frame-sidenav/frame-sidenav.component.ts:18</source>Interface Language</msg>
   <msg id="7113499429942611780" desc="Title of form used to create a new project"><source>app/forms/new-project/new-project.component.ts:1</source>Create new project</msg>
   <msg id="3325180562659478330" desc="name of new project"><source>app/forms/new-project/new-project.component.ts:6</source>name</msg>
   <msg id="7938369685336204989" desc="icon of new project"><source>app/forms/new-project/new-project.component.ts:9</source>icon</msg>

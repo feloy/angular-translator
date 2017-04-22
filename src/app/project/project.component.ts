@@ -24,6 +24,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   public source: Source = null;
   public translation: Translation = null;
   private filename = 'output.xml';
+  public untranslatedOnlyToggle: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private github: GithubService,
     private projects: ProjectsService) { }

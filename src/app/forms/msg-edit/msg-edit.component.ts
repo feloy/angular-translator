@@ -39,9 +39,13 @@ export class MsgEditComponent implements OnInit {
         this.srcMsg = null;
       } else {
         this.msgId = msgId;
+
         const trList = tr.msgs.filter((m: Msg) => m.id === msgId);
         this.trMsg = trList.length > 0 ? trList[0] : { id: msgId, content: ''};
-        this.srcMsg = src.msgs.filter((m: Msg) => m.id === msgId)[0];
+
+        const srcList = src.msgs.filter((m: Msg) => m.id === msgId);
+        this.srcMsg = srcList.length > 0 ? srcList[0] : { id: msgId, content: ''};
+
         this.createForm();
         this.form.setValue({
           src: this.srcMsg.content,

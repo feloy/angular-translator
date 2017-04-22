@@ -20,12 +20,11 @@ export class NewProjectComponent implements OnInit {
 
   defaultIcon = 'favorite';
   defaultName = '';
-  defaultRepo = 'actimeo/simmage-ui';
-  defaultI18ndir = 'src/i18n';
+  defaultRepo = 'Hackbit/angularattack2017-feloy';
+  defaultI18ndir = 'src/i18n-xlf';
   defaultSource = 'messages.xlf';
   defaultTranslations = `messages.fr.xlf
-messages.en.xlf
-messages.de.xlf`;
+messages.en.xlf`;
 
   constructor(private fb: FormBuilder, private router: Router, private projects: ProjectsService) { }
 

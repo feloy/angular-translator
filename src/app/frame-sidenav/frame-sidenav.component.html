@@ -15,7 +15,7 @@
 		<a md-line i18n="Add a new project in sidenav">New project...</a>
 	</md-list-item>
 
-	<h3 md-subheader>Interface Language</h3>
+	<h3 md-subheader i18n="subheader in sidenav for interface languages">Interface Language</h3>
 	<ng-template ngFor let-lang [ngForOf]="languages">
 		<a md-list-item *ngIf="lang.code !== localeId" href="/{{lang.code}}/">
 			{{lang.label}}</a>

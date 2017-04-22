@@ -29,6 +29,15 @@
         </context-group>
         <note priority="1" from="description">Add a new project in sidenav</note>
       </trans-unit>
+      <trans-unit id="38717fe18c338f68dbec24a0c196d614e08d5959" datatype="html">
+        <source>Interface Language</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">subheader in sidenav for interface languages</note>
+      </trans-unit>
       <trans-unit id="2e1546d8b73413d4e8cc90cf959884c67655f721" datatype="html">
         <source>Create new project</source>
         <target/>

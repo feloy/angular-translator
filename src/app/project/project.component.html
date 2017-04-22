@@ -9,7 +9,7 @@
 </md-toolbar>
 <div class="main">
   <div class="info">
-    <span i18n>repo:</span> {{project.repo}}<br><span i18n>i18n dir:</span> {{project.i18ndir}}<br><span i18n>source file:</span> {{project.source}}<br><span i18n>translations:</span> {{project.translations}}
+    <span i18n>repo:</span> {{project.repo}}<br><span i18n>i18n dir:</span> {{project.i18ndir}}<br><span i18n>source file:</span>    {{project.source}}<br><span i18n>translations:</span> {{project.translations}}
     <div *ngIf="source" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</div>
   </div>
 
@@ -21,7 +21,10 @@
       <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
     </md-select>
   </div>
+
+  <md-slide-toggle *ngIf="translation" color="primary" i18n="label for slide toggle" [(ngModel)]="untranslatedOnlyToggle">Untranslated only</md-slide-toggle>
+  
   <router-outlet></router-outlet>
 
-  <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation"></app-source-msgs-list>
+  <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation" [untranslatedOnly]="untranslatedOnlyToggle"></app-source-msgs-list>
 </div>
