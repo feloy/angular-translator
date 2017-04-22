@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE messagebundle [
+<!ELEMENT messagebundle (msg)*>
+<!ATTLIST messagebundle class CDATA #IMPLIED>
+
+<!ELEMENT msg (#PCDATA|ph|source)*>
+<!ATTLIST msg id CDATA #IMPLIED>
+<!ATTLIST msg seq CDATA #IMPLIED>
+<!ATTLIST msg name CDATA #IMPLIED>
+<!ATTLIST msg desc CDATA #IMPLIED>
+<!ATTLIST msg meaning CDATA #IMPLIED>
+<!ATTLIST msg obsolete (obsolete) #IMPLIED>
+<!ATTLIST msg xml:space (default|preserve) "default">
+<!ATTLIST msg is_hidden CDATA #IMPLIED>
+
+<!ELEMENT source (#PCDATA)>
+
+<!ELEMENT ph (#PCDATA|ex)*>
+<!ATTLIST ph name CDATA #REQUIRED>
+
+<!ELEMENT ex (#PCDATA)>
+]>
+<messagebundle>
+  <msg id="2496243157667362625" desc="App title"><source>app/frame/frame.component.ts:6</source>Angular Translator</msg>
+  <msg id="2821179408673282599" desc="Back to home page entry in sidenav"><source>app/frame-sidenav/frame-sidenav.component.ts:5</source>Home</msg>
+  <msg id="8786323189771711024" desc="Add a new project in sidenav"><source>app/frame-sidenav/frame-sidenav.component.ts:15</source>New project...</msg>
+  <msg id="7113499429942611780" desc="Title of form used to create a new project"><source>app/forms/new-project/new-project.component.ts:1</source>Create new project</msg>
+  <msg id="3325180562659478330" desc="name of new project"><source>app/forms/new-project/new-project.component.ts:6</source>name</msg>
+  <msg id="7938369685336204989" desc="icon of new project"><source>app/forms/new-project/new-project.component.ts:9</source>icon</msg>
+  <msg id="592313674725148714" desc="github repo of new project"><source>app/forms/new-project/new-project.component.ts:12</source>github repo</msg>
+  <msg id="408634011030808121" desc="i18n directory of new project"><source>app/forms/new-project/new-project.component.ts:15</source>i18n directory</msg>
+  <msg id="1368702990054357276" desc="source file name of new project"><source>app/forms/new-project/new-project.component.ts:18</source>source file name</msg>
+  <msg id="2159130950882492111" desc="button to cancel form edition"><source>app/forms/new-project/new-project.component.ts:24</source><source>app/forms/msg-edit/msg-edit.component.ts:8</source>Cancel</msg>
+  <msg id="3249513483374643425" desc="button to create new project"><source>app/forms/new-project/new-project.component.ts:25</source>Add</msg>
+  <msg id="7943238997084327153" desc="Menu entry to export translation as XMB"><source>app/project/project.component.ts:6</source>Export as XMB</msg>
+  <msg id="8235082727604702399" desc="Menu entry to export translation as XLIFF"><source>app/project/project.component.ts:7</source>Export as Xliff</msg>
+  <msg id="2100823588669968274"><source>app/project/project.component.ts:12</source>repo:</msg>
+  <msg id="4008883587646334"><source>app/project/project.component.ts:12</source>i18n dir:</msg>
+  <msg id="670574807836938282"><source>app/project/project.component.ts:12</source>source file:</msg>
+  <msg id="2812231354016793764"><source>app/project/project.component.ts:12</source>translations:</msg>
+  <msg id="7833618701943426847" desc="number of messages to translate"><source>app/project/project.component.ts:13</source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> messages} }</msg>
+  <msg id="5766870137437521988" desc="label to pick a translation in a select"><source>app/project/project.component.ts:19</source>Select a translation: </msg>
+  <msg id="397098723873502323" desc="button to close info"><source>app/widgets/progression/progression.component.ts:11</source>Done</msg>
+  <msg id="3768927257183755959" desc="button to save translation"><source>app/forms/msg-edit/msg-edit.component.ts:9</source>Save</msg>
+</messagebundle>
