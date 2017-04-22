@@ -1,3 +1,4 @@
+import { StateService } from './services/state.service';
 import { ProjectResolve } from './project/project-resolve';
 import { BackendService } from './services/backend.service';
 import { ProjectsService } from './services/projects.service';
@@ -56,6 +57,7 @@ import { ProjectComponent } from './project/project.component';
   providers: [
     ProjectsService,
     BackendService,
+    StateService,
     ProjectResolve
   ],
 

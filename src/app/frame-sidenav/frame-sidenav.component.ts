@@ -1,6 +1,7 @@
 import { Project } from './../models/project';
 import { ProjectsService } from './../services/projects.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'app-frame-sidenav',
@@ -9,14 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrameSidenavComponent implements OnInit {
 
-  public projects: Project[];
+
+  public projects: Observable<Project[]>;
 
   constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
-    this.projectsService.projects$.subscribe((projects: Project[]) => {
-      this.projects = projects;
-    });
+    this.projects = this.projectsService.projects$;
   }
 
 }

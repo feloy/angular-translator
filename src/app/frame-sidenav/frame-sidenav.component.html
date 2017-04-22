@@ -5,7 +5,7 @@
 		<a md-line>Home</a>
 	</md-list-item>
 
-	<md-list-item *ngFor="let project of projects" [routerLink]="['/project', project.id]" routerLinkActive="active">
+	<md-list-item *ngFor="let project of (projects | async)" [routerLink]="['/project', project.id]" routerLinkActive="active">
 		<md-icon md-list-icon>{{project.icon}}</md-icon>
 		<a md-line>{{project.name}}</a>
 	</md-list-item>
