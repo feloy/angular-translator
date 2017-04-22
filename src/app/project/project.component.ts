@@ -1,3 +1,4 @@
+import { ProjectsService } from './../services/projects.service';
 import { Translation } from './../models/translation';
 import { Source } from './../models/source';
 import { GithubService } from './../services/github.service';
@@ -22,25 +23,26 @@ export class ProjectComponent implements OnInit, OnDestroy {
   public source: Source = null;
   public translation: Translation = null;
 
-  constructor(private route: ActivatedRoute, private router: Router, private github: GithubService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private github: GithubService,
+  private projects: ProjectsService) { }
 
   ngOnInit() {
     this.route.data.pluck('project').subscribe((p: Project) => {
       this.progression = null;
-      this.source = null;
+      this.setSource(null);
       this.project = p;
     });
   }
 
   public onReload() {
-    this.source = null;
+    this.setSource(null);
     this.progression = null;
-    this.translation = null;
+    this.setTranslation(null);
     setTimeout(() => {
       this.progression = this.github.getSource(this.project)
         .do(v => {
           if (typeof v !== 'string' && typeof v !== 'boolean') {
-            this.source = v;
+            this.setSource(v);
           }
         });
     }, 0);
@@ -48,13 +50,12 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public onTranslationChanged(translation: string) {
     this.progression = null;
-    this.translation = null;
+    this.setTranslation(null);
     setTimeout(() => {
       this.progression = this.github.getTranslation(this.project, translation)
         .do(v => {
           if (typeof v !== 'string' && typeof v !== 'boolean') {
-            this.translation = v;
-            console.log(v);
+            this.setTranslation(v);
           }
         });
     }, 0);
@@ -66,5 +67,15 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     this.subs.forEach(sub => sub.unsubscribe());
+  }
+
+  private setTranslation(tr: Translation) {
+    this.translation = tr;
+    this.projects.setCurrentTranslation(tr);
+  }
+
+  private setSource(src: Source) {
+    this.source = src;
+    this.projects.setCurrentSource(src);
   }
 }

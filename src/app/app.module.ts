@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {
   MdButtonModule,
+  MdCardModule,
   MdIconModule,
   MdInputModule,
   MdListModule,
@@ -60,6 +61,7 @@ import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
     BrowserAnimationsModule,
     // Material
     MdButtonModule,
+    MdCardModule,
     MdIconModule,
     MdInputModule,
     MdListModule,

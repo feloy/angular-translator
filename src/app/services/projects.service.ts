@@ -1,3 +1,4 @@
+import { Translation } from './../models/translation';
 import { Source } from './../models/source';
 import { BackendService } from './backend.service';
 import { Project } from './../models/project';
@@ -9,6 +10,9 @@ export class ProjectsService {
 
   public projects$ = new ReplaySubject<Project[]>(1);
   private projects: Project[];
+
+  public currentTranslation$ = new ReplaySubject<Translation>(1);
+  public currentSource$ = new ReplaySubject<Source>(1);
 
   constructor(private backend: BackendService) {
     this.projects = this.backend.projectsList();
@@ -30,5 +34,13 @@ export class ProjectsService {
     } else {
       return null;
     }
+  }
+
+  public setCurrentTranslation(tr: Translation) {
+    this.currentTranslation$.next(tr);
+  }
+
+  public setCurrentSource(src: Source) {
+    this.currentSource$.next(src);
   }
 }

@@ -1,3 +1,6 @@
-<p>
-  msg-edit works!
-</p>
+<md-card *ngIf="trMsg !== null && srcMsg !== null">
+  <div class="taflex">
+    <textarea readonly [value]="srcMsg?.content"></textarea>
+    <textarea [value]="trMsg?.content"></textarea>
+  </div>
+</md-card>

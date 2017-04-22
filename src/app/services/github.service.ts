@@ -147,7 +147,6 @@ export class GithubService {
 
         source.msgs.push(msg);
       }
-      console.log(source);
       return source;
     } catch (e) {
       return null;
@@ -240,7 +239,6 @@ export class GithubService {
 
         translation.msgs.push(msg);
       }
-      console.log(translation);
       return translation;
     } catch (e) {
       return null;
