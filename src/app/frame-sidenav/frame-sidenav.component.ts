@@ -1,6 +1,6 @@
 import { Project } from './../models/project';
 import { ProjectsService } from './../services/projects.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, LOCALE_ID, Inject } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -10,10 +10,15 @@ import { Observable } from 'rxjs/Observable';
 })
 export class FrameSidenavComponent implements OnInit {
 
+  public languages = [
+    { code: 'en', label: 'English' },
+    { code: 'fr', label: 'Français' }
+  ];
 
   public projects: Observable<Project[]>;
 
-  constructor(private projectsService: ProjectsService) { }
+  constructor( @Inject(LOCALE_ID) protected localeId: string,
+    private projectsService: ProjectsService) { }
 
   ngOnInit() {
     this.projects = this.projectsService.projects$;
