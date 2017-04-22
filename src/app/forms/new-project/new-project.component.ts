@@ -16,12 +16,16 @@ export class NewProjectComponent implements OnInit {
   repoCtrl: FormControl;
   i18ndirCtrl: FormControl;
   sourceCtrl: FormControl;
+  translationsCtrl: FormControl;
 
   defaultIcon = 'favorite';
   defaultName = '';
   defaultRepo = 'actimeo/simmage-ui';
   defaultI18ndir = 'src/i18n';
   defaultSource = 'messages.xlf';
+  defaultTranslations = `messages.fr.xlf
+messages.en.xlf
+messages.de.xlf`;
 
   constructor(private fb: FormBuilder, private router: Router, private projects: ProjectsService) { }
 
@@ -35,7 +39,8 @@ export class NewProjectComponent implements OnInit {
       name: this.nameCtrl.value,
       repo: this.repoCtrl.value,
       i18ndir: this.i18ndirCtrl.value,
-      source: this.sourceCtrl.value
+      source: this.sourceCtrl.value,
+      translations: this.translationsCtrl.value.split('\n')
     });
     this.router.navigate(['/project', id]);
   }
@@ -50,12 +55,14 @@ export class NewProjectComponent implements OnInit {
     this.repoCtrl = new FormControl(this.defaultRepo, Validators.required);
     this.i18ndirCtrl = new FormControl(this.defaultI18ndir, Validators.required);
     this.sourceCtrl = new FormControl(this.defaultSource, Validators.required);
+    this.translationsCtrl = new FormControl(this.defaultTranslations, Validators.required);
     this.form = this.fb.group({
       icon: this.iconCtrl,
       name: this.nameCtrl,
       repo: this.repoCtrl,
       i18ndir: this.i18ndirCtrl,
-      source: this.sourceCtrl
+      source: this.sourceCtrl,
+      translations: this.translationsCtrl
     });
   }
 }

@@ -5,4 +5,5 @@ export interface Project {
   repo: string;
   i18ndir: string;
   source: string;
+  translations: string[];
 }

@@ -17,6 +17,9 @@
     <md-input-container>
       <input mdInput placeholder="source file name" formControlName="source">
     </md-input-container>
+    <md-input-container>
+      <textarea mdInput mdTextareaAutosize placeholder="translations files names" formControlName="translations"></textarea>
+    </md-input-container>
     <div class="buttons">
       <button md-button (click)="onCancel()">Cancel</button>
       <button md-raised-button color="primary" (click)="onAdd()" [disabled]="!form.valid || form.pristine">Add</button>
