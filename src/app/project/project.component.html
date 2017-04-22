@@ -1,3 +1,8 @@
-<p>
-  project works!
-</p>
+<div class="main">
+  <h2>{{(project|async).name}}</h2>
+  <div class="info">
+    repo: {{(project|async).repo}}<br>
+    i18n dir: {{(project|async).i18ndir}}<br>
+    source file: {{(project|async).source}}
+  </div>
+</div>

@@ -1,4 +1,9 @@
+import { Project } from './../models/project';
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/pluck';
 
 @Component({
   selector: 'app-project',
@@ -7,9 +12,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  constructor() { }
+  public project: Observable<Project>;
+
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.project = this.route.data.pluck('project');
   }
 
 }

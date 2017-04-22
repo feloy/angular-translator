@@ -1,3 +1,4 @@
+import { ProjectResolve } from './project/project-resolve';
 import { BackendService } from './services/backend.service';
 import { ProjectsService } from './services/projects.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -39,7 +40,7 @@ import { ProjectComponent } from './project/project.component';
         path: '', component: FrameComponent,
         children: [
           { path: 'newproject', component: NewProjectComponent },
-          { path: 'project/:id', component: ProjectComponent }
+          { path: 'project/:id', component: ProjectComponent, resolve: { project: ProjectResolve } }
         ]
       }
     ]),
@@ -54,7 +55,8 @@ import { ProjectComponent } from './project/project.component';
   ],
   providers: [
     ProjectsService,
-    BackendService
+    BackendService,
+    ProjectResolve
   ],
 
   bootstrap: [AppComponent]

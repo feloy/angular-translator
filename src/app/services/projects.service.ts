@@ -21,4 +21,12 @@ export class ProjectsService {
     this.backend.projectsSave(this.projects);
   }
 
+  public get(id: number): Project {
+    const list = this.projects.filter((p: Project) => p.id === id);
+    if (list.length === 1) {
+      return list[0];
+    } else {
+      return null;
+    }
+  }
 }
