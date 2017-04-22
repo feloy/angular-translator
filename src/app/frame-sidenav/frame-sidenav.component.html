@@ -16,9 +16,9 @@
 	</md-list-item>
 
 	<h3 md-subheader>Interface Language</h3>
-	<template ngFor let-lang [ngForOf]="languages">
-		<md-list-item *ngIf="lang.code !== localeId">
-			<a href="/{{lang.code}}/">{{lang.label}}</a> </md-list-item>
+	<ng-template ngFor let-lang [ngForOf]="languages">
+		<a md-list-item *ngIf="lang.code !== localeId" href="/{{lang.code}}/">
+			{{lang.label}}</a>
 		<md-list-item *ngIf="lang.code === localeId">{{lang.label}}</md-list-item>
-	</template>
+	</ng-template>
 </md-nav-list>
