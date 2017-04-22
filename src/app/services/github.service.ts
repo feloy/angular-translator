@@ -68,7 +68,6 @@ export class GithubService {
       const parser = new DOMParser();
       const xmlDoc = parser.parseFromString(data, 'text/xml');
       const domMsgs = xmlDoc.getElementsByTagName('msg');
-      console.log(domMsgs.length + ' msgs');
       for (let i = 0; i < domMsgs.length; i++) {
         const domMsg = domMsgs.item(i);
         const msg: Msg = {
@@ -89,15 +88,65 @@ export class GithubService {
         source.msgs.push(msg);
       }
 
-      console.log(source);
       return source;
     } catch (e) {
       return null;
     }
   }
 
-  private parseXliff(data: string): boolean {
-    console.log('parsing xliff');
-    return null;
+  private parseXliff(data: string): Source {
+    try {
+      const source = {
+        msgs: []
+      };
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data, 'text/xml');
+      const domMsgs = xmlDoc.getElementsByTagName('trans-unit');
+      for (let i = 0; i < domMsgs.length; i++) {
+        const domMsg = domMsgs.item(i);
+        const msg: Msg = {
+          id: domMsg.getAttribute('id'),
+          locations: [],
+          content: domMsg.getElementsByTagName('source')[0].innerHTML
+        };
+
+        const notes = domMsg.getElementsByTagName('note');
+        for (let j = 0; j < notes.length; j++) {
+          const note = notes.item(j);
+          const from = note.getAttribute('from');
+          if (from === 'description') {
+            msg.desc = note.textContent;
+          } else if (from === 'meaning') {
+            msg.meaning = note.textContent;
+          }
+        }
+
+        const contextGroups = domMsg.getElementsByTagName('context-group');
+        for (let j = 0; j < contextGroups.length; j++) {
+          const contextGroup = contextGroups.item(j);
+          const purpose = contextGroup.getAttribute('purpose');
+          if (purpose !== 'location') {
+            continue;
+          }
+          const contexts = contextGroup.getElementsByTagName('context');
+          let sourcefile = '', linenumber = -1;
+          for (let k = 0; k < contexts.length; k++) {
+            const context = contexts.item(k);
+            const type = context.getAttribute('context-type');
+            switch (type) {
+              case 'sourcefile': sourcefile = context.textContent; break;
+              case 'linenumber': linenumber = parseInt(context.textContent, 10); break;
+            }
+          }
+          msg.locations.push({ sourcefile, linenumber });
+        }
+
+        source.msgs.push(msg);
+      }
+      console.log(source);
+      return source;
+    } catch (e) {
+      return null;
+    }
   }
 }

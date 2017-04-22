@@ -13,4 +13,7 @@
 
   <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
 
+  <router-outlet></router-outlet>
+
+  <app-source-msgs-list *ngIf="source" (selected)="onMsgClicked($event)" [source]="source"></app-source-msgs-list>
 </div>

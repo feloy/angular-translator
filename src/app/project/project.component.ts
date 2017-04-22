@@ -2,7 +2,7 @@ import { Source } from './../models/source';
 import { GithubService } from './../services/github.service';
 import { Project } from './../models/project';
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 import { Observable } from 'rxjs/Observable';
@@ -20,7 +20,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   public progression: Observable<string | boolean | Source> = null;
   public source: Source = null;
 
-  constructor(private route: ActivatedRoute, private github: GithubService) { }
+  constructor(private route: ActivatedRoute, private router: Router, private github: GithubService) { }
 
   ngOnInit() {
     this.route.data.pluck('project').subscribe((p: Project) => {
@@ -38,6 +38,10 @@ export class ProjectComponent implements OnInit, OnDestroy {
           this.source = v;
         }
       });
+  }
+
+  public onMsgClicked(msgId: string) {
+    this.router.navigate([ '/project', this.project.id, msgId ]);
   }
 
   ngOnDestroy() {

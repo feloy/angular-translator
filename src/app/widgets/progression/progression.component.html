@@ -1,11 +1,13 @@
-<md-list>
-  <md-list-item *ngFor="let line of lines">
-    <md-icon md-list-icon *ngIf="line.res === undefined">replay</md-icon>
-    <md-icon md-list-icon *ngIf="line.res === true">check</md-icon>
-    <md-icon md-list-icon *ngIf="line.res === false">close</md-icon>
-    <h3 md-line>{{line.str}}</h3>
-  </md-list-item>
-</md-list>
-<div class="buttons">
-  <button *ngIf="done" md-button (click)="close.emit()">Done</button>
+<div class="main" [ngClass]="{'ok': state === true, 'err': state === false, 'running': state === null}">
+  <md-list>
+    <md-list-item *ngFor="let line of lines">
+      <md-icon md-list-icon *ngIf="line.res === undefined">replay</md-icon>
+      <md-icon md-list-icon *ngIf="line.res === true">check</md-icon>
+      <md-icon md-list-icon *ngIf="line.res === false">close</md-icon>
+      <h3 md-line>{{line.str}}</h3>
+    </md-list-item>
+  </md-list>
+  <div class="buttons">
+    <button *ngIf="done" md-button (click)="close.emit()">Done</button>
+  </div>
 </div>

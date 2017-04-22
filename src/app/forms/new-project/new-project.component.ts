@@ -18,7 +18,7 @@ export class NewProjectComponent implements OnInit {
   sourceCtrl: FormControl;
 
   defaultIcon = 'favorite';
-  defaultName = 'SimmageUI';
+  defaultName = '';
   defaultRepo = 'actimeo/simmage-ui';
   defaultI18ndir = 'src/i18n';
   defaultSource = 'messages.xlf';

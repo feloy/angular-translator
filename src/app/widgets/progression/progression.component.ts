@@ -19,6 +19,7 @@ export class ProgressionComponent implements OnInit {
   public lines: Line[] = [];
   private currentLine: Line;
   public done = false;
+  public state: boolean = null;
 
   constructor() { }
 
@@ -30,8 +31,12 @@ export class ProgressionComponent implements OnInit {
       } else if (typeof v === 'boolean') {
         this.currentLine.res = v;
         this.currentLine = null;
+        if (v === false) {
+          this.state = false;
+        }
       } else {
         this.done = true;
+        this.state = true;
       }
 
     });

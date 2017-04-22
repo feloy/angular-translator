@@ -25,6 +25,8 @@ import { FrameSidenavComponent } from './frame-sidenav/frame-sidenav.component';
 import { NewProjectComponent } from './forms/new-project/new-project.component';
 import { ProjectComponent } from './project/project.component';
 import { ProgressionComponent } from './widgets/progression/progression.component';
+import { SourceMsgsListComponent } from './source-msgs-list/source-msgs-list.component';
+import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +36,8 @@ import { ProgressionComponent } from './widgets/progression/progression.componen
     NewProjectComponent,
     ProjectComponent,
     ProgressionComponent,
+    SourceMsgsListComponent,
+    MsgEditComponent,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +48,11 @@ import { ProgressionComponent } from './widgets/progression/progression.componen
         path: '', component: FrameComponent,
         children: [
           { path: 'newproject', component: NewProjectComponent },
-          { path: 'project/:id', component: ProjectComponent, resolve: { project: ProjectResolve } }
+          {
+            path: 'project/:id', component: ProjectComponent, resolve: { project: ProjectResolve }, children: [
+              { path: ':msgid', component: MsgEditComponent }
+            ]
+          }
         ]
       }
     ]),
