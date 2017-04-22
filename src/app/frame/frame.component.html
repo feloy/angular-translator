@@ -1,0 +1,20 @@
+<div class="app-fullpage">
+  <md-toolbar color="primary" class="app-toolbar">
+    <button md-icon-button >
+      <md-icon>menu</md-icon>
+    </button>
+    <div class="title">Angular Translator</div>
+    <span class="app-fill-remaining-space"></span>
+    <button md-icon-button><md-icon>close</md-icon></button>
+  </md-toolbar>
+  <md-sidenav-container>
+    <md-sidenav #sidenav mode="side" opened>
+      <div class="app-belowtoolbar">
+        <app-frame-sidenav></app-frame-sidenav>
+      </div>
+    </md-sidenav>
+    <div class="app-belowtoolbar">
+      <!--router-outlet></router-outlet-->
+    </div>
+  </md-sidenav-container>
+</div>
