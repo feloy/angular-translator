@@ -9,6 +9,7 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/pluck';
+import * as FileSaver from 'file-saver';
 
 @Component({
   selector: 'app-project',
@@ -22,6 +23,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   public progression: Observable<string | boolean | Source | Translation> = null;
   public source: Source = null;
   public translation: Translation = null;
+  private filename = 'output.xml';
 
   constructor(private route: ActivatedRoute, private router: Router, private github: GithubService,
     private projects: ProjectsService) { }
@@ -34,7 +36,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.onReload();
     });
 
-    this.projects.currentTranslation$.subscribe( (tr: Translation) => {
+    this.projects.currentTranslation$.subscribe((tr: Translation) => {
       this.translation = tr;
     });
   }
@@ -54,6 +56,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
 
   public onTranslationChanged(translation: string) {
+    this.filename = translation;
     this.progression = null;
     this.setTranslation(null);
     setTimeout(() => {
@@ -83,7 +86,13 @@ export class ProjectComponent implements OnInit, OnDestroy {
     this.projects.setCurrentSource(src);
   }
 
-  public exportAs(fmt: 'xmb' | 'xliff') {
-    console.log('export as ' + fmt);
+  public exportAs(fmt: 'xmb' | 'xlf') {
+    const content = '<bla></bla>'; // TODO
+    const blob = new Blob([content], { type: 'application/xml' });
+    let filename = this.filename;
+    if (filename.substr(-3) !== fmt) {
+      filename = filename.substr(0, filename.length - 3) + fmt;
+    }
+    FileSaver.saveAs(blob, filename);
   }
 }

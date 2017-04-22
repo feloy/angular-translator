@@ -4,7 +4,7 @@
   <button md-icon-button title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
   <md-menu #exportMenu="mdMenu">
     <button md-menu-item (click)="exportAs('xmb')">Export as XMB</button>
-    <button md-menu-item (click)="exportAs('xliff')">Export as Xliff</button>
+    <button md-menu-item (click)="exportAs('xlf')">Export as Xliff</button>
   </md-menu>
 </md-toolbar>
 <div class="main">
