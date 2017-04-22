@@ -6,3 +6,6 @@
     <h3 md-line>{{line.str}}</h3>
   </md-list-item>
 </md-list>
+<div class="buttons">
+  <button *ngIf="done" md-button (click)="close.emit()">Done</button>
+</div>

@@ -1,3 +1,4 @@
+import { Source } from './../models/source';
 import { GithubService } from './../services/github.service';
 import { Project } from './../models/project';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -16,19 +17,27 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public project: Project;
   private subs: Subscription[] = [];
-  private progression: Observable<string | boolean> = null;
+  public progression: Observable<string | boolean | Source> = null;
+  public source: Source = null;
 
   constructor(private route: ActivatedRoute, private github: GithubService) { }
 
   ngOnInit() {
     this.route.data.pluck('project').subscribe((p: Project) => {
       this.progression = null;
+      this.source = null;
       this.project = p;
     });
   }
 
   public onReload() {
-    this.progression = this.github.getSource(this.project);
+    this.source = null;
+    this.progression = this.github.getSource(this.project)
+      .do(v => {
+        if (typeof v !== 'string' && typeof v !== 'boolean') {
+          this.source = v;
+        }
+      });
   }
 
   ngOnDestroy() {

@@ -6,7 +6,11 @@
 <div class="main">
   <div class="info">
     repo: {{project.repo}}<br> i18n dir: {{project.i18ndir}}<br> source file: {{project.source}}
+    <div *ngIf="source">
+      {{source.msgs.length}} messages
+    </div>
   </div>
 
-  <app-progression *ngIf="progression != null" [details]="progression"></app-progression>
+  <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
+
 </div>

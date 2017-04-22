@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Source } from './../../models/source';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
 interface Line {
@@ -13,10 +14,11 @@ interface Line {
 })
 export class ProgressionComponent implements OnInit {
 
-  @Input() details: Observable<string | boolean>;
-
-  lines: Line[] = [];
-  currentLine: Line;
+  @Input() details: Observable<string | boolean | Source>;
+  @Output() close = new EventEmitter();
+  public lines: Line[] = [];
+  private currentLine: Line;
+  public done = false;
 
   constructor() { }
 
@@ -25,9 +27,11 @@ export class ProgressionComponent implements OnInit {
       if (typeof v === 'string') {
         this.currentLine = { str: v };
         this.lines.push(this.currentLine);
-      } else {
+      } else if (typeof v === 'boolean') {
         this.currentLine.res = v;
         this.currentLine = null;
+      } else {
+        this.done = true;
       }
 
     });
