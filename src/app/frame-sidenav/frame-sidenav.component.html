@@ -1,7 +1,17 @@
 <md-nav-list>
-		<md-list-item
-			routerLink="/newproject" routerLinkActive="active">
-			<md-icon class="mod-sidenav" md-list-icon>add</md-icon>
-			<a class="mod-sidenav" md-line>New project...</a>
-		</md-list-item>
+
+	<md-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+		<md-icon md-list-icon>home</md-icon>
+		<a md-line>Home</a>
+	</md-list-item>
+
+	<md-list-item *ngFor="let project of projects" [routerLink]="['/project', project.id]" routerLinkActive="active">
+		<md-icon md-list-icon>{{project.icon}}</md-icon>
+		<a md-line>{{project.name}}</a>
+	</md-list-item>
+
+	<md-list-item routerLink="/newproject" routerLinkActive="active">
+		<md-icon md-list-icon>add</md-icon>
+		<a md-line>New project...</a>
+	</md-list-item>
 </md-nav-list>

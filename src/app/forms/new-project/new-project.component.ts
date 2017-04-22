@@ -1,3 +1,4 @@
+import { ProjectsService } from './../../services/projects.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -10,19 +11,32 @@ import { Router } from '@angular/router';
 export class NewProjectComponent implements OnInit {
 
   form: FormGroup;
+  iconCtrl: FormControl;
   nameCtrl: FormControl;
   repoCtrl: FormControl;
   i18ndirCtrl: FormControl;
   sourceCtrl: FormControl;
 
-  constructor(private fb: FormBuilder, private router: Router) { }
+  defaultIcon = 'favorite';
+  defaultName = 'SimmageUI';
+  defaultRepo = 'actimeo/simmage-ui';
+  defaultI18ndir = 'src/i18n';
+  defaultSource = 'messages.xlf';
+
+  constructor(private fb: FormBuilder, private router: Router, private projects: ProjectsService) { }
 
   ngOnInit() {
     this.createForm();
   }
 
   onAdd() {
-
+    this.projects.add({
+      icon: this.iconCtrl.value,
+      name: this.nameCtrl.value,
+      repo: this.repoCtrl.value,
+      i18ndir: this.i18ndirCtrl.value,
+      source: this.sourceCtrl.value
+    });
   }
 
   onCancel() {
@@ -30,11 +44,13 @@ export class NewProjectComponent implements OnInit {
   }
 
   private createForm() {
-    this.nameCtrl = new FormControl('', Validators.required);
-    this.repoCtrl = new FormControl('', Validators.required);
-    this.i18ndirCtrl = new FormControl('', Validators.required);
-    this.sourceCtrl = new FormControl('', Validators.required);
+    this.iconCtrl = new FormControl(this.defaultIcon, Validators.required);
+    this.nameCtrl = new FormControl(this.defaultName, Validators.required);
+    this.repoCtrl = new FormControl(this.defaultRepo, Validators.required);
+    this.i18ndirCtrl = new FormControl(this.defaultI18ndir, Validators.required);
+    this.sourceCtrl = new FormControl(this.defaultSource, Validators.required);
     this.form = this.fb.group({
+      icon: this.iconCtrl,
       name: this.nameCtrl,
       repo: this.repoCtrl,
       i18ndir: this.i18ndirCtrl,

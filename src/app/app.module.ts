@@ -1,3 +1,5 @@
+import { BackendService } from './services/backend.service';
+import { ProjectsService } from './services/projects.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -18,6 +20,7 @@ import { AppComponent } from './app.component';
 import { FrameComponent } from './frame/frame.component';
 import { FrameSidenavComponent } from './frame-sidenav/frame-sidenav.component';
 import { NewProjectComponent } from './forms/new-project/new-project.component';
+import { ProjectComponent } from './project/project.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ import { NewProjectComponent } from './forms/new-project/new-project.component';
     FrameComponent,
     FrameSidenavComponent,
     NewProjectComponent,
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +38,8 @@ import { NewProjectComponent } from './forms/new-project/new-project.component';
       {
         path: '', component: FrameComponent,
         children: [
-          { path: 'newproject', component: NewProjectComponent }
+          { path: 'newproject', component: NewProjectComponent },
+          { path: 'project/:id', component: ProjectComponent }
         ]
       }
     ]),
@@ -47,7 +52,10 @@ import { NewProjectComponent } from './forms/new-project/new-project.component';
     MdSidenavModule,
     MdToolbarModule,
   ],
-  providers: [],
+  providers: [
+    ProjectsService,
+    BackendService
+  ],
 
   bootstrap: [AppComponent]
 })

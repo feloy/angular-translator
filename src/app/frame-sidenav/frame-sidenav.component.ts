@@ -1,3 +1,5 @@
+import { Project } from './../models/project';
+import { ProjectsService } from './../services/projects.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FrameSidenavComponent implements OnInit {
 
-  constructor() { }
+  public projects: Project[];
+
+  constructor(private projectsService: ProjectsService) { }
 
   ngOnInit() {
+    this.projectsService.projects$.subscribe((projects: Project[]) => {
+      this.projects = projects;
+    });
   }
 
 }
