@@ -1,28 +1,28 @@
-<md-toolbar>Create new project</md-toolbar>
+<md-toolbar i18n="Title of form used to create a new project">Create new project</md-toolbar>
 
 <div class="main">
   <form [formGroup]="form">
     <md-input-container>
-      <input mdInput placeholder="name" formControlName="name">
+      <input mdInput i18n-placeholder="name of new project" placeholder="name" formControlName="name">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="icon" formControlName="icon">
+      <input mdInput i18n-placeholder="icon of new project" placeholder="icon" formControlName="icon">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="github repo" formControlName="repo">
+      <input mdInput i18n-placeholder="github repo of new project" placeholder="github repo" formControlName="repo">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="i18n directory" formControlName="i18ndir">
+      <input mdInput i18n-placeholder="i18n directory of new project" placeholder="i18n directory" formControlName="i18ndir">
     </md-input-container>
     <md-input-container>
-      <input mdInput placeholder="source file name" formControlName="source">
+      <input mdInput i18n-placeholder="source file name of new project" placeholder="source file name" formControlName="source">
     </md-input-container>
     <md-input-container>
       <textarea mdInput mdTextareaAutosize placeholder="translations files names" formControlName="translations"></textarea>
     </md-input-container>
     <div class="buttons">
-      <button md-button (click)="onCancel()">Cancel</button>
-      <button md-raised-button color="primary" (click)="onAdd()" [disabled]="!form.valid || form.pristine">Add</button>
+      <button md-button (click)="onCancel()" i18n="button to cancel form edition">Cancel</button>
+      <button md-raised-button color="primary" (click)="onAdd()" [disabled]="!form.valid || form.pristine" i18n="button to create new project">Add</button>
     </div>
   </form>
 </div>

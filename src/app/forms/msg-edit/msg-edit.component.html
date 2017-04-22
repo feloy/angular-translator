@@ -5,8 +5,8 @@
       <textarea formControlName="tr"></textarea>
     </div>
     <div class="buttons">
-      <button md-button (click)="onCancel()" *ngIf="!form.pristine">Cancel</button>
-      <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine">Save</button>
+      <button md-button (click)="onCancel()" *ngIf="!form.pristine" i18n="button to cancel form edition">Cancel</button>
+      <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine" i18n="button to save translation">Save</button>
     </div>
   </form>
 </md-card>

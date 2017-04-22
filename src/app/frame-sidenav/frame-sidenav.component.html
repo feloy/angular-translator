@@ -2,7 +2,7 @@
 
 	<md-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
 		<md-icon md-list-icon>home</md-icon>
-		<a md-line>Home</a>
+		<a md-line i18n="Back to home page entry in sidenav">Home</a>
 	</md-list-item>
 
 	<md-list-item *ngFor="let project of (projects | async)" [routerLink]="['/project', project.id]" routerLinkActive="active">
@@ -12,6 +12,6 @@
 
 	<md-list-item routerLink="/newproject" routerLinkActive="active">
 		<md-icon md-list-icon>add</md-icon>
-		<a md-line>New project...</a>
+		<a md-line i18n="Add a new project in sidenav">New project...</a>
 	</md-list-item>
 </md-nav-list>

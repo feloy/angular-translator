@@ -3,22 +3,20 @@
   <button (click)="onReload()" md-icon-button title="Reload source"><md-icon>autorenew</md-icon></button>
   <button md-icon-button title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
   <md-menu #exportMenu="mdMenu">
-    <button md-menu-item (click)="exportAs('xmb')">Export as XMB</button>
-    <button md-menu-item (click)="exportAs('xlf')">Export as Xliff</button>
+    <button md-menu-item (click)="exportAs('xmb')" i18n="Menu entry to export translation as XMB">Export as XMB</button>
+    <button md-menu-item (click)="exportAs('xlf')" i18n="Menu entry to export translation as XLIFF">Export as Xliff</button>
   </md-menu>
 </md-toolbar>
 <div class="main">
   <div class="info">
-    repo: {{project.repo}}<br> i18n dir: {{project.i18ndir}}<br> source file: {{project.source}}<br> translations: {{project.translations}}
-    <div *ngIf="source">
-      {{source.msgs.length}} messages
-    </div>
+    <span i18n>repo:</span> {{project.repo}}<br><span i18n>i18n dir:</span> {{project.i18ndir}}<br><span i18n>source file:</span> {{project.source}}<br><span i18n>translations:</span> {{project.translations}}
+    <div *ngIf="source" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</div>
   </div>
 
   <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
 
   <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
-    <span *ngIf="!translation">Select a translation: </span>
+    <span *ngIf="!translation" i18n="label to pick a translation in a select">Select a translation: </span>
     <md-select *ngIf="source" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
       <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
     </md-select>
