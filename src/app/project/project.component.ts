@@ -31,6 +31,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
       this.progression = null;
       this.setSource(null);
       this.project = p;
+      this.onReload();
     });
   }
 
