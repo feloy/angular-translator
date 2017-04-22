@@ -13,13 +13,12 @@
 
   <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
 
-  <div [ngClass]="{'right': translation}">
+  <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
     <span *ngIf="!translation">Select a translation: </span>
     <md-select *ngIf="source" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
       <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
     </md-select>
   </div>
-
   <router-outlet></router-outlet>
 
   <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation"></app-source-msgs-list>

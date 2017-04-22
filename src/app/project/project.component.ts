@@ -24,7 +24,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   public translation: Translation = null;
 
   constructor(private route: ActivatedRoute, private router: Router, private github: GithubService,
-  private projects: ProjectsService) { }
+    private projects: ProjectsService) { }
 
   ngOnInit() {
     this.route.data.pluck('project').subscribe((p: Project) => {
