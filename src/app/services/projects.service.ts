@@ -19,6 +19,7 @@ export class ProjectsService {
     this.projects.push(p);
     this.projects$.next(this.projects);
     this.backend.projectsSave(this.projects);
+    return p.id;
   }
 
   public get(id: number): Project {

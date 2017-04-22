@@ -1,3 +1,4 @@
+import { GithubService } from './services/github.service';
 import { StateService } from './services/state.service';
 import { ProjectResolve } from './project/project-resolve';
 import { BackendService } from './services/backend.service';
@@ -23,6 +24,7 @@ import { FrameComponent } from './frame/frame.component';
 import { FrameSidenavComponent } from './frame-sidenav/frame-sidenav.component';
 import { NewProjectComponent } from './forms/new-project/new-project.component';
 import { ProjectComponent } from './project/project.component';
+import { ProgressionComponent } from './widgets/progression/progression.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import { ProjectComponent } from './project/project.component';
     FrameSidenavComponent,
     NewProjectComponent,
     ProjectComponent,
+    ProgressionComponent,
   ],
   imports: [
     BrowserModule,
@@ -55,8 +58,9 @@ import { ProjectComponent } from './project/project.component';
     MdToolbarModule,
   ],
   providers: [
-    ProjectsService,
     BackendService,
+    GithubService,
+    ProjectsService,
     StateService,
     ProjectResolve
   ],

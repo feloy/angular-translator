@@ -1,8 +1,12 @@
+<md-toolbar>{{project.name}}
+  <span class="app-fill-remaining-space"></span>
+  <button (click)="onReload()" md-icon-button title="Reload sources"><md-icon>autorenew</md-icon></button>
+
+</md-toolbar>
 <div class="main">
-  <h2>{{(project|async).name}}</h2>
   <div class="info">
-    repo: {{(project|async).repo}}<br>
-    i18n dir: {{(project|async).i18ndir}}<br>
-    source file: {{(project|async).source}}
+    repo: {{project.repo}}<br> i18n dir: {{project.i18ndir}}<br> source file: {{project.source}}
   </div>
+
+  <app-progression *ngIf="progression != null" [details]="progression"></app-progression>
 </div>

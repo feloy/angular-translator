@@ -30,13 +30,14 @@ export class NewProjectComponent implements OnInit {
   }
 
   onAdd() {
-    this.projects.add({
+    const id = this.projects.add({
       icon: this.iconCtrl.value,
       name: this.nameCtrl.value,
       repo: this.repoCtrl.value,
       i18ndir: this.i18ndirCtrl.value,
       source: this.sourceCtrl.value
     });
+    this.router.navigate(['/project', id]);
   }
 
   onCancel() {
