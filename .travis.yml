@@ -9,6 +9,8 @@ addons:
   ssh_known_hosts: kirikou.elol.fr
 before_script:
 - yarn global add @angular/cli
+test:
+  - npm run test
 before_deploy:
 - npm run build:all
 - openssl aes-256-cbc -K $encrypted_4f7d8ed15ece_key -iv $encrypted_4f7d8ed15ece_iv
