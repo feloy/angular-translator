@@ -1,6 +1,6 @@
 <md-toolbar>{{project.name}}
   <span class="app-fill-remaining-space"></span>
-  <button (click)="onReload()" md-icon-button title="Reload sources"><md-icon>autorenew</md-icon></button>
+  <button (click)="onReload()" md-icon-button title="Reload source"><md-icon>autorenew</md-icon></button>
 
 </md-toolbar>
 <div class="main">
@@ -13,7 +13,13 @@
 
   <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
 
+  <div class="right">
+    <md-select *ngIf="source" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
+      <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
+    </md-select>
+  </div>
+
   <router-outlet></router-outlet>
 
-  <app-source-msgs-list *ngIf="source" (selected)="onMsgClicked($event)" [source]="source"></app-source-msgs-list>
+  <app-source-msgs-list *ngIf="source" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation"></app-source-msgs-list>
 </div>

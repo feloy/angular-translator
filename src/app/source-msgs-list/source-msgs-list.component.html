@@ -2,5 +2,6 @@
   <md-list-item *ngFor="let msg of source.msgs">
     <md-icon md-list-icon>translatea</md-icon>
     <a md-line (click)="selected.emit(msg.id)">{{msg.content}}</a>
+    <p md-line>{{getTranslation(msg.id)}}</p>
   </md-list-item>
 </md-nav-list>

@@ -6,7 +6,7 @@ export interface Msg {
   id: string;
   desc?: string;
   meaning?: string;
-  locations: Location[];
+  locations?: Location[];
   content: string;
 }
 

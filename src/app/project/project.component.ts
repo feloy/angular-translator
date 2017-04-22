@@ -1,3 +1,4 @@
+import { Translation } from './../models/translation';
 import { Source } from './../models/source';
 import { GithubService } from './../services/github.service';
 import { Project } from './../models/project';
@@ -17,8 +18,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public project: Project;
   private subs: Subscription[] = [];
-  public progression: Observable<string | boolean | Source> = null;
+  public progression: Observable<string | boolean | Source | Translation> = null;
   public source: Source = null;
+  public translation: Translation = null;
 
   constructor(private route: ActivatedRoute, private router: Router, private github: GithubService) { }
 
@@ -32,16 +34,34 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public onReload() {
     this.source = null;
-    this.progression = this.github.getSource(this.project)
-      .do(v => {
-        if (typeof v !== 'string' && typeof v !== 'boolean') {
-          this.source = v;
-        }
-      });
+    this.progression = null;
+    this.translation = null;
+    setTimeout(() => {
+      this.progression = this.github.getSource(this.project)
+        .do(v => {
+          if (typeof v !== 'string' && typeof v !== 'boolean') {
+            this.source = v;
+          }
+        });
+    }, 0);
+  }
+
+  public onTranslationChanged(translation: string) {
+    this.progression = null;
+    this.translation = null;
+    setTimeout(() => {
+      this.progression = this.github.getTranslation(this.project, translation)
+        .do(v => {
+          if (typeof v !== 'string' && typeof v !== 'boolean') {
+            this.translation = v;
+            console.log(v);
+          }
+        });
+    }, 0);
   }
 
   public onMsgClicked(msgId: string) {
-    this.router.navigate([ '/project', this.project.id, msgId ]);
+    this.router.navigate(['/project', this.project.id, msgId]);
   }
 
   ngOnDestroy() {

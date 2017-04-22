@@ -1,3 +1,4 @@
+import { Translation } from './../models/translation';
 import { Source, Msg } from './../models/source';
 import { Project } from './../models/project';
 import { Injectable, EventEmitter } from '@angular/core';
@@ -10,6 +11,9 @@ export class GithubService {
 
   constructor(private http: Http) { }
 
+  /**
+    * Get Source
+    */
   public getSource(p: Project): Observable<string | boolean | Source> {
     const url = 'https://raw.githubusercontent.com/' + p.repo + '/master/' + p.i18ndir + '/' + p.source;
     const obs = new ReplaySubject<string | boolean>(0);
@@ -149,4 +153,98 @@ export class GithubService {
       return null;
     }
   }
+
+  /**
+   * Get translation
+   * @param p
+   * @param translation
+   */
+  public getTranslation(p: Project, translation: string): Observable<string | boolean | Translation> {
+    const obs = new ReplaySubject<string | boolean>(0);
+    const url = 'https://raw.githubusercontent.com/' + p.repo + '/master/' + p.i18ndir + '/' + translation;
+    obs.next('loading ' + url);
+    this.http.get(url) // TODO make observable chain
+      .subscribe(
+      (resp: Response) => {
+        const data = resp.text();
+        obs.next(true);
+        obs.next('detecting format (xliff or xmb)');
+        const fmt = this.detectFormat(data);
+        if (fmt === null) {
+          obs.next(false);
+          return;
+        }
+        obs.next(true);
+
+        let parseFunc;
+        switch (fmt) {
+          case 'xmb': parseFunc = this.parseXmbTranslation; break;
+          case 'xliff': parseFunc = this.parseXliffTranslation; break;
+        }
+        obs.next('parsing file in ' + fmt + ' format');
+        const tr = parseFunc(data);
+        obs.next(tr !== null);
+        if (tr === null) {
+          return;
+        }
+        obs.next(tr);
+      },
+      err => obs.next(false));
+    return obs;
+  }
+
+
+  private parseXmbTranslation(data: string): Translation {
+    try {
+      const translation = {
+        msgs: []
+      };
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data, 'text/xml');
+      const domMsgs = xmlDoc.getElementsByTagName('msg');
+      for (let i = 0; i < domMsgs.length; i++) {
+        const domMsg = domMsgs.item(i);
+        const msg: Msg = {
+          id: domMsg.getAttribute('id'),
+          content: ''
+        };
+        const domLocations = domMsg.getElementsByTagName('source');
+        for (let j = domLocations.length - 1; j >= 0; j--) {
+          const domLocation = domLocations.item(j);
+          domMsg.removeChild(domLocation);
+        }
+        msg.content = domMsg.innerHTML;
+        translation.msgs.push(msg);
+      }
+
+      return translation;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  private parseXliffTranslation(data: string): Translation {
+    try {
+      const translation = {
+        msgs: []
+      };
+      const parser = new DOMParser();
+      const xmlDoc = parser.parseFromString(data, 'text/xml');
+      const domMsgs = xmlDoc.getElementsByTagName('trans-unit');
+      for (let i = 0; i < domMsgs.length; i++) {
+        const domMsg = domMsgs.item(i);
+        const msg: Msg = {
+          id: domMsg.getAttribute('id'),
+          content: domMsg.getElementsByTagName('target')[0].innerHTML
+        };
+
+        translation.msgs.push(msg);
+      }
+      console.log(translation);
+      return translation;
+    } catch (e) {
+      return null;
+    }
+  }
+
 }

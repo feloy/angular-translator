@@ -15,6 +15,7 @@ import {
   MdIconModule,
   MdInputModule,
   MdListModule,
+  MdSelectModule,
   MdSidenavModule,
   MdToolbarModule,
 } from '@angular/material';
@@ -62,6 +63,7 @@ import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
     MdIconModule,
     MdInputModule,
     MdListModule,
+    MdSelectModule,
     MdSidenavModule,
     MdToolbarModule,
   ],
