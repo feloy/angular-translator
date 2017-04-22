@@ -1,12 +1,24 @@
 <md-card *ngIf="trMsg !== null && srcMsg !== null">
-  <form [formGroup]="form">
-    <div class="taflex">
-      <textarea readonly formControlName="src"></textarea>
-      <textarea formControlName="tr"></textarea>
-    </div>
-    <div class="buttons">
-      <button md-button (click)="onCancel()" *ngIf="!form.pristine" i18n="button to cancel form edition">Cancel</button>
-      <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine" i18n="button to save translation">Save</button>
-    </div>
-  </form>
+  <md-card-content>
+    <form [formGroup]="form">
+      <div class="taflex">
+        <textarea readonly formControlName="src"></textarea>
+        <textarea formControlName="tr"></textarea>
+      </div>
+
+      <div class="infos">
+        <div *ngIf="srcMsg.meaning">meaning: {{srcMsg.meaning}}</div>
+        <div *ngIf="srcMsg.desc">description: {{srcMsg.desc}}</div>
+
+        <div *ngIf="srcMsg.locations.length" class="locations">
+          <div class="title">Locations:</div>
+          <div *ngFor="let location of srcMsg.locations" class="location">{{location.sourcefile}}:{{location.linenumber}}</div>
+        </div>
+      </div>
+    </form>
+  </md-card-content>
+  <md-card-actions align="end">
+    <button md-button (click)="onCancel()" *ngIf="!form.pristine" i18n="button to cancel form edition">Cancel</button>
+    <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine" i18n="button to save translation">Save</button>
+  </md-card-actions>
 </md-card>
