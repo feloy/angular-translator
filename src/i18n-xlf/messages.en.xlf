@@ -4,7 +4,7 @@
     <body>
       <trans-unit id="efaa0a6abc1e9d85e2bf61f2b3c5bf7888744a48" datatype="html">
         <source>Angular Translator</source>
-        <target/>
+        <target>Angular Translator</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/frame/frame.component.ts</context>
           <context context-type="linenumber">6</context>
@@ -13,7 +13,7 @@
       </trans-unit>
       <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
         <source>Home</source>
-        <target/>
+        <target>Home</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
           <context context-type="linenumber">5</context>
@@ -22,7 +22,7 @@
       </trans-unit>
       <trans-unit id="0ef59545c4a6617f90a1633358f3337ae739a29f" datatype="html">
         <source>New project...</source>
-        <target/>
+        <target>New project...</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
           <context context-type="linenumber">15</context>
@@ -31,7 +31,7 @@
       </trans-unit>
       <trans-unit id="2e1546d8b73413d4e8cc90cf959884c67655f721" datatype="html">
         <source>Create new project</source>
-        <target/>
+        <target>Create new project</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">1</context>
@@ -40,7 +40,7 @@
       </trans-unit>
       <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
         <source>name</source>
-        <target/>
+        <target>name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">6</context>
@@ -49,7 +49,7 @@
       </trans-unit>
       <trans-unit id="dc660f0b2b272ccbe6a7f7a71ffb56b851ee8b85" datatype="html">
         <source>icon</source>
-        <target/>
+        <target>icon</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">9</context>
@@ -58,7 +58,7 @@
       </trans-unit>
       <trans-unit id="d7aefa90434e8d85b2b5648b7a39ffb3ceb9f9c8" datatype="html">
         <source>github repo</source>
-        <target/>
+        <target>github repo</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">12</context>
@@ -67,7 +67,7 @@
       </trans-unit>
       <trans-unit id="2a0ff0eadb02b2bc6e6e85056d65e72ff805ce2b" datatype="html">
         <source>i18n directory</source>
-        <target/>
+        <target>i18n directory</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">15</context>
@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id="9cef3758593466e5f84fa4630c18df2c23133648" datatype="html">
         <source>source file name</source>
-        <target/>
+        <target>source file name</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">18</context>
@@ -85,7 +85,7 @@
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>Cancel</source>
-        <target/>
+        <target>Cancel</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">24</context>
@@ -98,7 +98,7 @@
       </trans-unit>
       <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
         <source>Add</source>
-        <target/>
+        <target>Add</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">25</context>
@@ -107,7 +107,7 @@
       </trans-unit>
       <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13" datatype="html">
         <source>Export as XMB</source>
-        <target/>
+        <target>Export as XMB</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">6</context>
@@ -116,7 +116,7 @@
       </trans-unit>
       <trans-unit id="02f7ed0809aa6574b91bfffd1c606a68628f651a" datatype="html">
         <source>Export as Xliff</source>
-        <target/>
+        <target>Export as Xliff</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">7</context>
@@ -125,7 +125,7 @@
       </trans-unit>
       <trans-unit id="a2f358ba57fac9600cf09e3ba56cf5769c196032" datatype="html">
         <source>repo:</source>
-        <target/>
+        <target>repo:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">12</context>
@@ -133,7 +133,7 @@
       </trans-unit>
       <trans-unit id="13acd2cb41d8e13276f98c81163175960949c9cc" datatype="html">
         <source>i18n dir:</source>
-        <target/>
+        <target>i18n dir:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">12</context>
@@ -141,7 +141,7 @@
       </trans-unit>
       <trans-unit id="a1afad68767b9026b2681274cba81cd7e2ec1789" datatype="html">
         <source>source file:</source>
-        <target/>
+        <target>source file:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">12</context>
@@ -149,7 +149,7 @@
       </trans-unit>
       <trans-unit id="60726d99044c1649e0b4d5ec8e05b875e6477322" datatype="html">
         <source>translations:</source>
-        <target/>
+        <target>translations:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">12</context>
@@ -157,7 +157,7 @@
       </trans-unit>
       <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x id="INTERPOLATION"/> messages} }</source>
-        <target/>
+        <target>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x id="INTERPOLATION"/> messages} }</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">13</context>
@@ -166,7 +166,7 @@
       </trans-unit>
       <trans-unit id="67b56c103339c4bf4d91e59245a975340642a10e" datatype="html">
         <source>Select a translation: </source>
-        <target/>
+        <target>Select a translation:</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
           <context context-type="linenumber">19</context>
@@ -175,7 +175,7 @@
       </trans-unit>
       <trans-unit id="8dd413cee2228118c536f503709329a4d1a395e2" datatype="html">
         <source>Done</source>
-        <target/>
+        <target>Done</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/widgets/progression/progression.component.ts</context>
           <context context-type="linenumber">11</context>
@@ -184,7 +184,7 @@
       </trans-unit>
       <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
         <source>Save</source>
-        <target/>
+        <target>Save</target>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
           <context context-type="linenumber">9</context>
