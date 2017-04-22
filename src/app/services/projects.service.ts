@@ -43,7 +43,15 @@ export class ProjectsService {
   }
 
   public setTranslatedMsg(id: string, value: string) {
-    this.currentTranslation.msgs.filter( (m: Msg) => m.id === id)[0].content = value;
+    const list = this.currentTranslation.msgs.filter( (m: Msg) => m.id === id);
+    if (list.length > 0) {
+      list[0].content = value;
+    } else {
+      this.currentTranslation.msgs.push({
+        id: id,
+        content: value
+      });
+    }
     this.currentTranslation$.next(this.currentTranslation);
   }
 

@@ -159,7 +159,7 @@ export class GithubService {
    * @param translation
    */
   public getTranslation(p: Project, translation: string): Observable<string | boolean | Translation> {
-    const obs = new ReplaySubject<string | boolean>(0);
+    const obs = new ReplaySubject<string | boolean | Translation>(0);
     const url = 'https://raw.githubusercontent.com/' + p.repo + '/master/' + p.i18ndir + '/' + translation;
     obs.next('loading ' + url);
     this.http.get(url) // TODO make observable chain
@@ -188,7 +188,11 @@ export class GithubService {
         }
         obs.next(tr);
       },
-      err => obs.next(false));
+      err => {
+        obs.next(true);
+        const ret: Translation = { msgs: [] };
+        obs.next(ret);
+      });
     return obs;
   }
 

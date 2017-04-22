@@ -1,6 +1,7 @@
 <md-toolbar>{{project.name}}
   <span class="app-fill-remaining-space"></span>
   <button (click)="onReload()" md-icon-button title="Reload source"><md-icon>autorenew</md-icon></button>
+  <button (click)="onExport()" md-icon-button title="Export current translation" [disabled]="!translation"><md-icon>file_download</md-icon></button>
 
 </md-toolbar>
 <div class="main">

@@ -36,7 +36,6 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
     this.projects.currentTranslation$.subscribe( (tr: Translation) => {
       this.translation = tr;
-      console.log('new translation');
     });
   }
 
@@ -76,7 +75,6 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
 
   private setTranslation(tr: Translation) {
-//    this.translation = tr;
     this.projects.setCurrentTranslation(tr);
   }
 

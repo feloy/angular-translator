@@ -24,8 +24,13 @@ export class SourceMsgsListComponent implements OnInit {
     if (this.translation === null) {
       return '';
     }
-    return this.translation.msgs
-      .filter((m: Msg) => m.id === id)[0].content;
+    const list = this.translation.msgs
+      .filter((m: Msg) => m.id === id);
+    if (list.length > 0) {
+      return list[0].content;
+    } else {
+      return '';
+    }
   }
 
 }
