@@ -101,7 +101,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">44</context>
         </context-group>
         <note priority="1" from="description">button to cancel form edition</note>
       </trans-unit>
@@ -268,16 +268,25 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">29</context>
+          <context context-type="linenumber">30</context>
         </context-group>
         <note priority="1" from="description">short label before term locations list</note>
+      </trans-unit>
+      <trans-unit id="5a0ea4d0017a8a974294857b00567244d05c66d3" datatype="html">
+        <source>view details</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
+          <context context-type="linenumber">31</context>
+        </context-group>
+        <note priority="1" from="description">label for slide toggle for locations details</note>
       </trans-unit>
       <trans-unit id="e061e87ae50c058e9c44967097bf9d29b31d2b8f" datatype="html">
         <source>Save &amp; Next</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">45</context>
         </context-group>
         <note priority="1" from="description">button to save translation</note>
       </trans-unit>
