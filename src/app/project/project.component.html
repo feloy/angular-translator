@@ -1,6 +1,6 @@
 <md-toolbar>{{project.name}}
   <span class="app-fill-remaining-space"></span>
-  <button (click)="onReload()" md-icon-button i18n-title="Title on Reload source icon" title="Reload source"><md-icon>autorenew</md-icon></button>
+  <button (click)="onReload()" [disabled]="needSave" md-icon-button i18n-title="Title on Reload source icon" title="Reload source"><md-icon>autorenew</md-icon></button>
   <button md-icon-button i18n-title="Title on Export icon" title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
   <button style="opacity: 0.87"  (click)="onEdit()" md-icon-button i18n-title="Title on Edit project icon" title="Edit project settings"><md-icon>settings</md-icon></button>
   <md-menu #exportMenu="mdMenu">
@@ -18,12 +18,12 @@
       <div>{{project.repo}}</div>
       <span *ngIf="source" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</span>
       <span *ngIf="source && translation" i18n="number of messages translated">, {countTranslated, plural, =0 {0 translated} =1 {1 translated} other {{{countTranslated}} translated}}</span>
-      <span class="pointer" *ngIf="projects.needSave$ | async" title="need save">*</span>
+      <span class="pointer" *ngIf="needSave" title="need save">*</span>
     </div>
 
     <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
       <span *ngIf="!translation" i18n="label to pick a translation in a select">Select a translation: </span>
-      <md-select *ngIf="source" i18n-placeholder="placeholder on select translation" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
+      <md-select [disabled]="needSave" *ngIf="source" i18n-placeholder="placeholder on select translation" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
         <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
       </md-select>
     </div>
