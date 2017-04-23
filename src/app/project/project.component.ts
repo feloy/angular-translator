@@ -6,6 +6,8 @@ import { Source, Msg } from './../models/source';
 import { GithubService } from './../services/github.service';
 import { Project } from './../models/project';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { style, state, animate, transition, trigger } from '@angular/animations';
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
@@ -16,7 +18,22 @@ import * as FileSaver from 'file-saver';
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
-  styleUrls: ['./project.component.css']
+  styleUrls: ['./project.component.css'],
+  animations: [
+    trigger(
+      'enterAnimation', [
+        transition(':enter', [
+          style({ transform: 'translateX(100%)', opacity: 0 }),
+          animate('200ms', style({ opacity: 1 }))
+        ]),
+        transition(':leave', [
+          style({ transform: 'translateX(0)', opacity: 1 }),
+          animate('750ms', style({ opacity: 0 }))
+        ])
+      ]
+    )
+  ],
+
 })
 export class ProjectComponent implements OnInit, OnDestroy {
 
@@ -62,6 +79,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
         .do(v => {
           if (typeof v !== 'string' && typeof v !== 'boolean') {
             this.setSource(v);
+            setTimeout( () => {
+              this.progression = null;
+            }, 3000);
           }
         });
     }, 0);
@@ -76,6 +96,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
         .do(v => {
           if (typeof v !== 'string' && typeof v !== 'boolean') {
             this.setTranslation(v);
+            setTimeout( () => {
+              this.progression = null;
+            }, 3000);
           }
         });
     }, 0);

@@ -24,7 +24,7 @@
     </div>
   </div>
   
-  <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
+  <app-progression *ngIf="progression != null" [@enterAnimation]="progression != null" [details]="progression" (close)="progression = null"></app-progression>
 
 
   <router-outlet></router-outlet>
