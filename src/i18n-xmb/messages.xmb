@@ -43,9 +43,11 @@
   <msg id="7943238997084327153" desc="Menu entry to export translation as XMB"><source>app/project/project.component.ts:7</source>Export as XMB</msg>
   <msg id="8235082727604702399" desc="Menu entry to export translation as XLIFF"><source>app/project/project.component.ts:8</source>Export as Xliff</msg>
   <msg id="7833618701943426847" desc="number of messages to translate"><source>app/project/project.component.ts:19</source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> messages} }</msg>
-  <msg id="5766870137437521988" desc="label to pick a translation in a select"><source>app/project/project.component.ts:23</source>Select a translation: </msg>
-  <msg id="4435458555231795208" desc="placeholder on select translation"><source>app/project/project.component.ts:24</source>translation</msg>
-  <msg id="5399203141838435392" desc="label for slide toggle"><source>app/project/project.component.ts:32</source>Untranslated only</msg>
+  <msg id="1838234878815432895" desc="number of messages translated"><source>app/project/project.component.ts:20</source>, <ph name="ICU"><ex>ICU</ex></ph></msg>
+  <msg id="8839783648343196031"><source>app/project/project.component.ts:20</source>{VAR_PLURAL, plural, =0 {0 translated} =1 {1 translated} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> translated} }</msg>
+  <msg id="5766870137437521988" desc="label to pick a translation in a select"><source>app/project/project.component.ts:25</source>Select a translation: </msg>
+  <msg id="4435458555231795208" desc="placeholder on select translation"><source>app/project/project.component.ts:26</source>translation</msg>
+  <msg id="5399203141838435392" desc="label for slide toggle"><source>app/project/project.component.ts:34</source>Untranslated only</msg>
   <msg id="397098723873502323" desc="button to close info"><source>app/widgets/progression/progression.component.ts:11</source>Done</msg>
   <msg id="5968499761399826869" desc="card subtitle explaining how to quickly translate"><source>app/forms/msg-edit/msg-edit.component.ts:2</source>Press ctrl-enter to save &amp; go to next untranslated message</msg>
   <msg id="274059794441913141" desc="label for slide toggle for icu builder"><source>app/forms/msg-edit/msg-edit.component.ts:6</source>ICU Builder (prototype)</msg>

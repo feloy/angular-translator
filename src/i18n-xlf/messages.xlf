@@ -204,12 +204,29 @@
         </context-group>
         <note priority="1" from="description">number of messages to translate</note>
       </trans-unit>
+      <trans-unit id="7fdce4ec0792ca67dbaae96d646ee005f3cebe10" datatype="html">
+        <source>, <x id="ICU"/></source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">number of messages translated</note>
+      </trans-unit>
+      <trans-unit id="162d85e93812937dbfebfffeb57830d52a8b4e85" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {0 translated} =1 {1 translated} other {<x id="INTERPOLATION"/> translated} }</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="67b56c103339c4bf4d91e59245a975340642a10e" datatype="html">
         <source>Select a translation: </source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">label to pick a translation in a select</note>
       </trans-unit>
@@ -218,7 +235,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <note priority="1" from="description">placeholder on select translation</note>
       </trans-unit>
@@ -227,7 +244,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">34</context>
         </context-group>
         <note priority="1" from="description">label for slide toggle</note>
       </trans-unit>
