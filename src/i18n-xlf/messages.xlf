@@ -47,12 +47,21 @@
         </context-group>
         <note priority="1" from="description">Title of form used to create a new project</note>
       </trans-unit>
+      <trans-unit id="7eefe3a1be08dc2b873e5de922a78d06e31dd539" datatype="html">
+        <source><x id="INTERPOLATION"/></source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">Title of form used to create a new project</note>
+      </trans-unit>
       <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
         <source>name</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">name of new project</note>
       </trans-unit>
@@ -61,7 +70,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">10</context>
         </context-group>
         <note priority="1" from="description">icon of new project</note>
       </trans-unit>
@@ -70,7 +79,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">13</context>
         </context-group>
         <note priority="1" from="description">github repo of new project</note>
       </trans-unit>
@@ -79,7 +88,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">i18n directory of new project</note>
       </trans-unit>
@@ -88,16 +97,25 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="description">source file name of new project</note>
+      </trans-unit>
+      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
+          <context context-type="linenumber">25</context>
+        </context-group>
+        <note priority="1" from="description">button to delete project</note>
       </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>Cancel</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">24</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
@@ -110,9 +128,18 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">25</context>
+          <context context-type="linenumber">27</context>
         </context-group>
         <note priority="1" from="description">button to create new project</note>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
+          <context context-type="linenumber">28</context>
+        </context-group>
+        <note priority="1" from="description">button to save existing project</note>
       </trans-unit>
       <trans-unit id="cd4828aa8a53cb59ac0690fc3406344e7cdfa7ac" datatype="html">
         <source>Reload source</source>
@@ -132,12 +159,21 @@
         </context-group>
         <note priority="1" from="description">Title on Export icon</note>
       </trans-unit>
+      <trans-unit id="db3a3973f17dd719b950b9780af96c39a4213f63" datatype="html">
+        <source>Edit project settings</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Title on Edit project icon</note>
+      </trans-unit>
       <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13" datatype="html">
         <source>Export as XMB</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">6</context>
+          <context context-type="linenumber">7</context>
         </context-group>
         <note priority="1" from="description">Menu entry to export translation as XMB</note>
       </trans-unit>
@@ -146,48 +182,16 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">7</context>
+          <context context-type="linenumber">8</context>
         </context-group>
         <note priority="1" from="description">Menu entry to export translation as XLIFF</note>
-      </trans-unit>
-      <trans-unit id="a2f358ba57fac9600cf09e3ba56cf5769c196032" datatype="html">
-        <source>repo:</source>
-        <target/>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">14</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="13acd2cb41d8e13276f98c81163175960949c9cc" datatype="html">
-        <source>i18n dir:</source>
-        <target/>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="a1afad68767b9026b2681274cba81cd7e2ec1789" datatype="html">
-        <source>source file:</source>
-        <target/>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="60726d99044c1649e0b4d5ec8e05b875e6477322" datatype="html">
-        <source>translations:</source>
-        <target/>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
       </trans-unit>
       <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x id="INTERPOLATION"/> messages} }</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">16</context>
+          <context context-type="linenumber">19</context>
         </context-group>
         <note priority="1" from="description">number of messages to translate</note>
       </trans-unit>
@@ -196,7 +200,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">20</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">label to pick a translation in a select</note>
       </trans-unit>
@@ -205,7 +209,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">21</context>
+          <context context-type="linenumber">24</context>
         </context-group>
         <note priority="1" from="description">placeholder on select translation</note>
       </trans-unit>

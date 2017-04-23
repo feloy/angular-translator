@@ -26,24 +26,24 @@
   <msg id="8786323189771711024" desc="Add a new project in sidenav"><source>app/frame-sidenav/frame-sidenav.component.ts:15</source>New project...</msg>
   <msg id="6715766486858313263" desc="subheader in sidenav for interface languages"><source>app/frame-sidenav/frame-sidenav.component.ts:18</source>Interface Language</msg>
   <msg id="7113499429942611780" desc="Title of form used to create a new project"><source>app/forms/new-project/new-project.component.ts:1</source>Create new project</msg>
-  <msg id="3325180562659478330" desc="name of new project"><source>app/forms/new-project/new-project.component.ts:6</source>name</msg>
-  <msg id="7938369685336204989" desc="icon of new project"><source>app/forms/new-project/new-project.component.ts:9</source>icon</msg>
-  <msg id="592313674725148714" desc="github repo of new project"><source>app/forms/new-project/new-project.component.ts:12</source>github repo</msg>
-  <msg id="408634011030808121" desc="i18n directory of new project"><source>app/forms/new-project/new-project.component.ts:15</source>i18n directory</msg>
-  <msg id="1368702990054357276" desc="source file name of new project"><source>app/forms/new-project/new-project.component.ts:18</source>source file name</msg>
-  <msg id="2159130950882492111" desc="button to cancel form edition"><source>app/forms/new-project/new-project.component.ts:24</source><source>app/forms/msg-edit/msg-edit.component.ts:44</source>Cancel</msg>
-  <msg id="3249513483374643425" desc="button to create new project"><source>app/forms/new-project/new-project.component.ts:25</source>Add</msg>
+  <msg id="3858890165853745290" desc="Title of form used to create a new project"><source>app/forms/new-project/new-project.component.ts:2</source><ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph></msg>
+  <msg id="3325180562659478330" desc="name of new project"><source>app/forms/new-project/new-project.component.ts:7</source>name</msg>
+  <msg id="7938369685336204989" desc="icon of new project"><source>app/forms/new-project/new-project.component.ts:10</source>icon</msg>
+  <msg id="592313674725148714" desc="github repo of new project"><source>app/forms/new-project/new-project.component.ts:13</source>github repo</msg>
+  <msg id="408634011030808121" desc="i18n directory of new project"><source>app/forms/new-project/new-project.component.ts:16</source>i18n directory</msg>
+  <msg id="1368702990054357276" desc="source file name of new project"><source>app/forms/new-project/new-project.component.ts:19</source>source file name</msg>
+  <msg id="7022070615528435141" desc="button to delete project"><source>app/forms/new-project/new-project.component.ts:25</source>Delete</msg>
+  <msg id="2159130950882492111" desc="button to cancel form edition"><source>app/forms/new-project/new-project.component.ts:26</source><source>app/forms/msg-edit/msg-edit.component.ts:44</source>Cancel</msg>
+  <msg id="3249513483374643425" desc="button to create new project"><source>app/forms/new-project/new-project.component.ts:27</source>Add</msg>
+  <msg id="3768927257183755959" desc="button to save existing project"><source>app/forms/new-project/new-project.component.ts:28</source>Save</msg>
   <msg id="7578181986792041076" desc="Title on Reload source icon"><source>app/project/project.component.ts:3</source>Reload source</msg>
   <msg id="7192614753465442940" desc="Title on Export icon"><source>app/project/project.component.ts:4</source>Export current translation</msg>
-  <msg id="7943238997084327153" desc="Menu entry to export translation as XMB"><source>app/project/project.component.ts:6</source>Export as XMB</msg>
-  <msg id="8235082727604702399" desc="Menu entry to export translation as XLIFF"><source>app/project/project.component.ts:7</source>Export as Xliff</msg>
-  <msg id="2100823588669968274"><source>app/project/project.component.ts:14</source>repo:</msg>
-  <msg id="4008883587646334"><source>app/project/project.component.ts:15</source>i18n dir:</msg>
-  <msg id="670574807836938282"><source>app/project/project.component.ts:15</source>source file:</msg>
-  <msg id="2812231354016793764"><source>app/project/project.component.ts:15</source>translations:</msg>
-  <msg id="7833618701943426847" desc="number of messages to translate"><source>app/project/project.component.ts:16</source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> messages} }</msg>
-  <msg id="5766870137437521988" desc="label to pick a translation in a select"><source>app/project/project.component.ts:20</source>Select a translation: </msg>
-  <msg id="4435458555231795208" desc="placeholder on select translation"><source>app/project/project.component.ts:21</source>translation</msg>
+  <msg id="2848474166783385746" desc="Title on Edit project icon"><source>app/project/project.component.ts:5</source>Edit project settings</msg>
+  <msg id="7943238997084327153" desc="Menu entry to export translation as XMB"><source>app/project/project.component.ts:7</source>Export as XMB</msg>
+  <msg id="8235082727604702399" desc="Menu entry to export translation as XLIFF"><source>app/project/project.component.ts:8</source>Export as Xliff</msg>
+  <msg id="7833618701943426847" desc="number of messages to translate"><source>app/project/project.component.ts:19</source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<ph name="INTERPOLATION"><ex>INTERPOLATION</ex></ph> messages} }</msg>
+  <msg id="5766870137437521988" desc="label to pick a translation in a select"><source>app/project/project.component.ts:23</source>Select a translation: </msg>
+  <msg id="4435458555231795208" desc="placeholder on select translation"><source>app/project/project.component.ts:24</source>translation</msg>
   <msg id="5399203141838435392" desc="label for slide toggle"><source>app/project/project.component.ts:32</source>Untranslated only</msg>
   <msg id="397098723873502323" desc="button to close info"><source>app/widgets/progression/progression.component.ts:11</source>Done</msg>
   <msg id="5968499761399826869" desc="card subtitle explaining how to quickly translate"><source>app/forms/msg-edit/msg-edit.component.ts:2</source>Press ctrl-enter to save &amp; go to next untranslated message</msg>
