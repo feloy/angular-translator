@@ -90,6 +90,14 @@
         <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> messages} }</source>
         <target>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> messages} }</target>
       </trans-unit>
+      <trans-unit id="7fdce4ec0792ca67dbaae96d646ee005f3cebe10" datatype="html">
+        <source>, <x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="ICU"/></source>
+        <target>, <x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="ICU"/></target>
+      </trans-unit>
+      <trans-unit id="162d85e93812937dbfebfffeb57830d52a8b4e85" datatype="html">
+        <source>{VAR_PLURAL, plural, =0 {0 translated} =1 {1 translated} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> translated} }</source>
+        <target>{VAR_PLURAL, plural, =0 {0 translated} =1 {1 translated} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> translated} }</target>
+      </trans-unit>
       <trans-unit id="67b56c103339c4bf4d91e59245a975340642a10e" datatype="html">
         <source>Select a translation: </source>
         <target>Select a translation:</target>
