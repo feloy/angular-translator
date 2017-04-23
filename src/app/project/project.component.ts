@@ -28,6 +28,7 @@ export class ProjectComponent implements OnInit, OnDestroy {
   public translation: Translation = null;
   private filename = 'output.xml';
   public untranslatedOnlyToggle: boolean;
+  public countTranslated;
 
   constructor(private route: ActivatedRoute, private router: Router, private github: GithubService,
     private projects: ProjectsService) { }
@@ -42,6 +43,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
     this.projects.currentTranslation$.subscribe((tr: Translation) => {
       this.translation = tr;
+
+      this.countTranslated = this.translation ? this.translation.msgs.filter((m: Msg) => m.content !== '').length : 0;
+
       // Go to first untranslated message
       if (this.source && this.translation) {
         const list = this.source.msgs.filter((m: Msg) => {
