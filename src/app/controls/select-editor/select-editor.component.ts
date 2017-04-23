@@ -1,4 +1,4 @@
-import { Msg, FormatMessageCase } from './../../models/source';
+import { Msg, FormatMessage, FormatMessageCase } from './../../models/source';
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
@@ -8,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class SelectEditorComponent implements OnInit {
 
-  @Input() content: Msg;
+  @Input() content: FormatMessage;
 
   constructor() { }
 

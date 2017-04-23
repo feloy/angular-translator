@@ -49,7 +49,8 @@ export class ProjectsService {
     } else {
       this.currentTranslation.msgs.push({
         id: id,
-        content: value
+        content: value,
+        icu: null
       });
     }
     this.currentTranslation$.next(this.currentTranslation);
