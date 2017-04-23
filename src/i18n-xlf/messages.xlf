@@ -101,7 +101,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">8</context>
+          <context context-type="linenumber">22</context>
         </context-group>
         <note priority="1" from="description">button to cancel form edition</note>
       </trans-unit>
@@ -137,7 +137,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="13acd2cb41d8e13276f98c81163175960949c9cc" datatype="html">
@@ -145,7 +145,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="a1afad68767b9026b2681274cba81cd7e2ec1789" datatype="html">
@@ -153,7 +153,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="60726d99044c1649e0b4d5ec8e05b875e6477322" datatype="html">
@@ -161,7 +161,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">15</context>
         </context-group>
       </trans-unit>
       <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41" datatype="html">
@@ -169,7 +169,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">13</context>
+          <context context-type="linenumber">16</context>
         </context-group>
         <note priority="1" from="description">number of messages to translate</note>
       </trans-unit>
@@ -178,9 +178,18 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">19</context>
+          <context context-type="linenumber">20</context>
         </context-group>
         <note priority="1" from="description">label to pick a translation in a select</note>
+      </trans-unit>
+      <trans-unit id="7f5338a0434962f6829b3791637981dc742c57c9" datatype="html">
+        <source>Untranslated only</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+        <note priority="1" from="description">label for slide toggle</note>
       </trans-unit>
       <trans-unit id="8dd413cee2228118c536f503709329a4d1a395e2" datatype="html">
         <source>Done</source>
@@ -191,12 +200,12 @@
         </context-group>
         <note priority="1" from="description">button to close info</note>
       </trans-unit>
-      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
-        <source>Save</source>
+      <trans-unit id="e061e87ae50c058e9c44967097bf9d29b31d2b8f" datatype="html">
+        <source>Save &amp; Next</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">9</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">button to save translation</note>
       </trans-unit>
