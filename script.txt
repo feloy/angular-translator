@@ -1,0 +1,42 @@
+Here is Angular Translator, the ultimate tool to translate your Angular applications.
+
+You first have to create a new project with the New Project button.
+
+There is some predefined information that you can use if you want to test the translation of this particular application.
+
+The application needs to know the github repository where your app sources can be found, 
+the directory in which are placed the i18n files,
+and the names of the source and translation files.
+
+The source file contains the original terms written by the developers and the contexts for these terms (files, lines, meaning, description).
+
+The translation files will contain the translations written with this app. At this time, they are empty or even non-existant.
+
+Let's create our first project with these default information.
+
+The application has loaded the source file. It has detected its format (xmb) and has found 32 messages in it.
+
+We can now select a translation file to begin the translation for a specific language, for example french.
+
+====
+
+At this point, we are ready to begin the translation.
+
+Before, we can hide this information message, we can display the details of the locations where are found each terms
+and we can display the list of untranslated terms only.
+
+Let's start the translation.
+
+You can see in the left the term extracted from the source file.
+
+We can write our translation in the right textarea and press ctrl-enter to save and go to the next term to translate.
+
+====
+
+Angular uses some particular format to handle plurals and selects. We have here an example of a plural translation. 
+
+The formatted language is not easy to read. 
+
+We will be able to use the ICU builder to build this message with a friendly interface.
+
+At this point, we can at least understand the format of the message. 
