@@ -1,3 +1,5 @@
+import { Xlf } from './../models/xlf';
+import { Xmb } from './../models/xmb';
 import { ProjectsService } from './../services/projects.service';
 import { Translation } from './../models/translation';
 import { Source, Msg } from './../models/source';
@@ -101,7 +103,14 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
 
   public exportAs(fmt: 'xmb' | 'xlf') {
-    const content = '<bla></bla>'; // TODO
+    let exportFunc;
+    switch (fmt) {
+      case 'xmb': exportFunc = Xmb.export; break;
+      case 'xlf': exportFunc = Xlf.export; break;
+    }
+
+    const content = exportFunc(this.source, this.translation);
+
     const blob = new Blob([content], { type: 'application/xml' });
     let filename = this.filename;
     if (filename.substr(-3) !== fmt) {
