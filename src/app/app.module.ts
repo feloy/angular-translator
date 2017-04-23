@@ -1,3 +1,4 @@
+import { CanDeactivateProjectService } from './services/can-deactivate-project.service';
 import { GithubService } from './services/github.service';
 import { StateService } from './services/state.service';
 import { ProjectResolve } from './project/project-resolve';
@@ -20,6 +21,7 @@ import {
   MdSelectModule,
   MdSidenavModule,
   MdSlideToggleModule,
+  MdSnackBarModule,
   MdToolbarModule,
 } from '@angular/material';
 
@@ -69,7 +71,10 @@ import { AboutComponent } from './about/about.component';
             path: 'project/:id/edit', component: NewProjectComponent, resolve: { project: ProjectResolve }
           },
           {
-            path: 'project/:id', component: ProjectComponent, resolve: { project: ProjectResolve }, children: [
+            path: 'project/:id', component: ProjectComponent,
+            resolve: { project: ProjectResolve },
+            canDeactivate: [ CanDeactivateProjectService ],
+            children: [
               { path: ':msgid', component: MsgEditComponent }
             ]
           }
@@ -87,6 +92,7 @@ import { AboutComponent } from './about/about.component';
     MdSelectModule,
     MdSidenavModule,
     MdSlideToggleModule,
+    MdSnackBarModule,
     MdToolbarModule,
   ],
   providers: [
@@ -94,7 +100,8 @@ import { AboutComponent } from './about/about.component';
     GithubService,
     ProjectsService,
     StateService,
-    ProjectResolve
+    ProjectResolve,
+    CanDeactivateProjectService
   ],
 
   bootstrap: [AppComponent]

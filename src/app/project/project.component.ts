@@ -1,3 +1,4 @@
+import { CanComponentDeactivate } from './../services/can-deactivate-project.service';
 import { Xlf } from './../models/xlf';
 import { Xmb } from './../models/xmb';
 import { ProjectsService } from './../services/projects.service';
@@ -6,6 +7,7 @@ import { Source, Msg } from './../models/source';
 import { GithubService } from './../services/github.service';
 import { Project } from './../models/project';
 import { Component, OnInit, OnDestroy } from '@angular/core';
+import { MdSnackBar } from '@angular/material';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
@@ -19,7 +21,7 @@ import * as FileSaver from 'file-saver';
   templateUrl: './project.component.html',
   styleUrls: ['./project.component.css']
 })
-export class ProjectComponent implements OnInit, OnDestroy {
+export class ProjectComponent implements OnInit, OnDestroy, CanComponentDeactivate {
 
   public project: Project;
   private subs: Subscription[] = [];
@@ -29,19 +31,20 @@ export class ProjectComponent implements OnInit, OnDestroy {
   private filename = 'output.xml';
   public untranslatedOnlyToggle: boolean;
   public countTranslated;
+  public needSave: boolean;
 
   constructor(private route: ActivatedRoute, private router: Router, private github: GithubService,
-    private projects: ProjectsService) { }
+    private projects: ProjectsService, private snackBar: MdSnackBar) { }
 
   ngOnInit() {
-    this.route.data.pluck('project').subscribe((p: Project) => {
+    this.subs.push(this.route.data.pluck('project').subscribe((p: Project) => {
       this.project = p;
       this.progression = null;
       this.setSource(null);
       this.onReload();
-    });
+    }));
 
-    this.projects.currentTranslation$.subscribe((tr: Translation) => {
+    this.subs.push(this.projects.currentTranslation$.subscribe((tr: Translation) => {
       this.translation = tr;
 
       this.countTranslated = this.translation ? this.translation.msgs.filter((m: Msg) => m.content !== '').length : 0;
@@ -55,7 +58,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
           this.navigateTo(list[0].id);
         }
       }
-    });
+    }));
+
+    this.subs.push(this.projects.needSave$.subscribe((b: boolean) => this.needSave = b));
   }
 
   public onReload() {
@@ -124,5 +129,20 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   public onEdit() {
     this.router.navigate(['/project', this.project.id, 'edit']);
+  }
+
+  public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+    if (this.needSave) {
+      const snackBarRef = this.snackBar.open('Changes need to be saved', 'Ignore', { duration: 3000 });
+
+      const dism$ = snackBarRef.afterDismissed().map(() => false);
+      const act$ = snackBarRef.onAction().map(() => {
+        this.projects.setNeedSave(false); // Ignore changes
+        return true;
+      });
+      return Observable.merge(dism$, act$);
+    } else {
+      return true;
+    }
   }
 }
