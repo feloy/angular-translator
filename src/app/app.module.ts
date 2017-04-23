@@ -35,6 +35,7 @@ import { HomeComponent } from './home/home.component';
 import { PluralEditorComponent } from './controls/plural-editor/plural-editor.component';
 import { SelectEditorComponent } from './controls/select-editor/select-editor.component';
 import { LocationDetailsComponent } from './widgets/location-details/location-details.component';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +51,7 @@ import { LocationDetailsComponent } from './widgets/location-details/location-de
     PluralEditorComponent,
     SelectEditorComponent,
     LocationDetailsComponent,
+    AboutComponent,
   ],
   imports: [
     BrowserModule,
@@ -61,6 +63,7 @@ import { LocationDetailsComponent } from './widgets/location-details/location-de
         path: '', component: FrameComponent,
         children: [
           { path: '', component: HomeComponent },
+          { path: 'about', component: AboutComponent },
           { path: 'newproject', component: NewProjectComponent },
           {
             path: 'project/:id/edit', component: NewProjectComponent, resolve: { project: ProjectResolve }
