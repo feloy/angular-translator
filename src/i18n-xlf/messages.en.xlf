@@ -106,6 +106,10 @@
         <source>Press ctrl-enter to save &amp; go to next untranslated message</source>
         <target>Press ctrl-enter to save &amp; go to next untranslated message</target>
       </trans-unit>
+      <trans-unit id="ecdd78e2f23c4ebf968e233cb85a948b06ee6b5b" datatype="html">
+        <source>ICU Builder (prototype)</source>
+        <target>ICU Builder (prototype)</target>
+      </trans-unit>
       <trans-unit id="9068be38c68d19872800cfcd8d930cb80a81b649" datatype="html">
         <source>meaning: </source>
         <target>meaning: </target>
@@ -117,6 +121,10 @@
       <trans-unit id="95638a7fdcf1d5868a09373df5bd033848e9fe5e" datatype="html">
         <source>Locations:</source>
         <target>Locations:</target>
+      </trans-unit>
+      <trans-unit id="5a0ea4d0017a8a974294857b00567244d05c66d3" datatype="html">
+        <source>view details</source>
+        <target>view details</target>
       </trans-unit>
       <trans-unit id="e061e87ae50c058e9c44967097bf9d29b31d2b8f" datatype="html">
         <source>Save &amp; Next</source>
