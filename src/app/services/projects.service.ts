@@ -1,3 +1,4 @@
+import { Icu } from './../models/icu';
 import { Translation } from './../models/translation';
 import { Source, Msg } from './../models/source';
 import { BackendService } from './backend.service';
@@ -60,11 +61,12 @@ export class ProjectsService {
     const list = this.currentTranslation.msgs.filter((m: Msg) => m.id === id);
     if (list.length > 0) {
       list[0].content = value;
+      list[0].icu = Icu.parse(value);
     } else {
       this.currentTranslation.msgs.push({
         id: id,
         content: value,
-        icu: null
+        icu: Icu.parse(value)
       });
     }
     this.currentTranslation$.next(this.currentTranslation);
