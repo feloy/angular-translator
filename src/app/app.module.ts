@@ -31,6 +31,7 @@ import { ProjectComponent } from './project/project.component';
 import { ProgressionComponent } from './widgets/progression/progression.component';
 import { SourceMsgsListComponent } from './source-msgs-list/source-msgs-list.component';
 import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
     ProgressionComponent,
     SourceMsgsListComponent,
     MsgEditComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,6 +54,7 @@ import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
       {
         path: '', component: FrameComponent,
         children: [
+          { path: '', component: HomeComponent },
           { path: 'newproject', component: NewProjectComponent },
           {
             path: 'project/:id', component: ProjectComponent, resolve: { project: ProjectResolve }, children: [
