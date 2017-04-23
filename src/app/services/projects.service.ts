@@ -9,12 +9,27 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 @Injectable()
 export class ProjectsService {
 
+  /**
+   * The list of defined projects
+   */
   public projects$ = new ReplaySubject<Project[]>(1);
   private projects: Project[];
 
+  /**
+   * The selected translation file
+   */
   public currentTranslation$ = new ReplaySubject<Translation>(1);
   private currentTranslation: Translation;
+
+  /**
+   * The urrent source
+   */
   public currentSource$ = new ReplaySubject<Source>(1);
+
+  /**
+   * Does the current project need to be saved
+   */
+  public needSave$ = new ReplaySubject<boolean>(1);
 
   constructor(private backend: BackendService) {
     this.projects = this.backend.projectsList();
@@ -70,9 +85,14 @@ export class ProjectsService {
       });
     }
     this.currentTranslation$.next(this.currentTranslation);
+    this.needSave$.next(true);
   }
 
   public setCurrentSource(src: Source) {
     this.currentSource$.next(src);
+  }
+
+  public setNeedSave(b: boolean) {
+    this.needSave$.next(b);
   }
 }

@@ -8,3 +8,5 @@ h2 { margin: 0 0 8px 0; }
 .select { flex-grow: 0; }
 
 .untrans { margin-top: 16px; }
+
+.pointer { cursor: pointer; }

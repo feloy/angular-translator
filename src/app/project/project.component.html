@@ -18,6 +18,7 @@
       <div>{{project.repo}}</div>
       <span *ngIf="source" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</span>
       <span *ngIf="source && translation" i18n="number of messages translated">, {countTranslated, plural, =0 {0 translated} =1 {1 translated} other {{{countTranslated}} translated}}</span>
+      <span class="pointer" *ngIf="projects.needSave$ | async" title="need save">*</span>
     </div>
 
     <div class="select" [ngClass]="{'right': translation, 'left': !translation}">

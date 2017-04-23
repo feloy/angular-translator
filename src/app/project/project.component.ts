@@ -118,9 +118,11 @@ export class ProjectComponent implements OnInit, OnDestroy {
       filename = filename.substr(0, filename.length - 3) + fmt;
     }
     FileSaver.saveAs(blob, filename);
+
+    this.projects.setNeedSave(false);
   }
 
   public onEdit() {
-    this.router.navigate(['/project', this.project.id, 'edit' ]);
+    this.router.navigate(['/project', this.project.id, 'edit']);
   }
 }
