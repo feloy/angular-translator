@@ -1,5 +1,5 @@
 <md-card *ngIf="trMsg !== null && srcMsg !== null">
-  <md-card-subtitle>Press ctrl-enter to save &amp; go to next untranslated message</md-card-subtitle>
+  <md-card-subtitle i18n="card subtitle explaining how to quickly translate">Press ctrl-enter to save &amp; go to next untranslated message</md-card-subtitle>
   <md-card-content>
     <form [formGroup]="form">
       <div class="taflex">
@@ -8,11 +8,11 @@
       </div>
 
       <div class="infos">
-        <div *ngIf="srcMsg.meaning">meaning: {{srcMsg.meaning}}</div>
-        <div *ngIf="srcMsg.desc">description: {{srcMsg.desc}}</div>
+        <div *ngIf="srcMsg.meaning"><span i18n="short label before term meaning">meaning: </span>{{srcMsg.meaning}}</div>
+        <div *ngIf="srcMsg.desc"><span i18n="short label before term description">description: </span>{{srcMsg.desc}}</div>
 
         <div *ngIf="srcMsg.locations.length" class="locations">
-          <div class="title">Locations:</div>
+          <div class="title" i18n="short label before term locations list">Locations:</div>
           <div *ngFor="let location of srcMsg.locations" class="location">{{location.sourcefile}}:{{location.linenumber}}</div>
         </div>
       </div>

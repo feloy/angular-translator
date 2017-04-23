@@ -1,7 +1,7 @@
 <md-toolbar>{{project.name}}
   <span class="app-fill-remaining-space"></span>
-  <button (click)="onReload()" md-icon-button title="Reload source"><md-icon>autorenew</md-icon></button>
-  <button md-icon-button title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
+  <button (click)="onReload()" md-icon-button i18n-title="Title on Reload source icon" title="Reload source"><md-icon>autorenew</md-icon></button>
+  <button md-icon-button i18n-title="Title on Export icon" title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
   <md-menu #exportMenu="mdMenu">
     <button md-menu-item (click)="exportAs('xmb')" i18n="Menu entry to export translation as XMB">Export as XMB</button>
     <button md-menu-item (click)="exportAs('xlf')" i18n="Menu entry to export translation as XLIFF">Export as Xliff</button>
@@ -18,7 +18,7 @@
 
     <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
       <span *ngIf="!translation" i18n="label to pick a translation in a select">Select a translation: </span>
-      <md-select *ngIf="source" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
+      <md-select *ngIf="source" i18n-placeholder="placeholder on select translation" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
         <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
       </md-select>
     </div>

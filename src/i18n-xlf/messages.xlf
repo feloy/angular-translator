@@ -114,6 +114,24 @@
         </context-group>
         <note priority="1" from="description">button to create new project</note>
       </trans-unit>
+      <trans-unit id="cd4828aa8a53cb59ac0690fc3406344e7cdfa7ac" datatype="html">
+        <source>Reload source</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Title on Reload source icon</note>
+      </trans-unit>
+      <trans-unit id="69505e72ac65040f4532c2fe87446d95300024d8" datatype="html">
+        <source>Export current translation</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+        <note priority="1" from="description">Title on Export icon</note>
+      </trans-unit>
       <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13" datatype="html">
         <source>Export as XMB</source>
         <target/>
@@ -182,6 +200,15 @@
         </context-group>
         <note priority="1" from="description">label to pick a translation in a select</note>
       </trans-unit>
+      <trans-unit id="f9e6cda4afcddc7fdc2d24f589e23c112b0c11ae" datatype="html">
+        <source>translation</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/project/project.component.ts</context>
+          <context context-type="linenumber">21</context>
+        </context-group>
+        <note priority="1" from="description">placeholder on select translation</note>
+      </trans-unit>
       <trans-unit id="7f5338a0434962f6829b3791637981dc742c57c9" datatype="html">
         <source>Untranslated only</source>
         <target/>
@@ -199,6 +226,42 @@
           <context context-type="linenumber">11</context>
         </context-group>
         <note priority="1" from="description">button to close info</note>
+      </trans-unit>
+      <trans-unit id="1e775ca4b70091d518f84bebf078709360f1f076" datatype="html">
+        <source>Press ctrl-enter to save &amp; go to next untranslated message</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
+          <context context-type="linenumber">2</context>
+        </context-group>
+        <note priority="1" from="description">card subtitle explaining how to quickly translate</note>
+      </trans-unit>
+      <trans-unit id="9068be38c68d19872800cfcd8d930cb80a81b649" datatype="html">
+        <source>meaning: </source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <note priority="1" from="description">short label before term meaning</note>
+      </trans-unit>
+      <trans-unit id="a4c395e6637b8ca3f27c273232e5e546fbbf90fd" datatype="html">
+        <source>description: </source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+        <note priority="1" from="description">short label before term description</note>
+      </trans-unit>
+      <trans-unit id="95638a7fdcf1d5868a09373df5bd033848e9fe5e" datatype="html">
+        <source>Locations:</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+        <note priority="1" from="description">short label before term locations list</note>
       </trans-unit>
       <trans-unit id="e061e87ae50c058e9c44967097bf9d29b31d2b8f" datatype="html">
         <source>Save &amp; Next</source>

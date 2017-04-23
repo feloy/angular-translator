@@ -76,7 +76,7 @@
       </trans-unit>
       <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> messages} }</source>
-        <target></target>
+        <target>{VAR_PLURAL, plural, =0 {aucun message} =1 {1 message} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> messages} }</target>
       </trans-unit>
       <trans-unit id="67b56c103339c4bf4d91e59245a975340642a10e" datatype="html">
         <source>Select a translation: </source>
