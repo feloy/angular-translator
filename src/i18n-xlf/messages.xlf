@@ -101,7 +101,7 @@
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">22</context>
+          <context context-type="linenumber">36</context>
         </context-group>
         <note priority="1" from="description">button to cancel form edition</note>
       </trans-unit>
@@ -236,12 +236,21 @@
         </context-group>
         <note priority="1" from="description">card subtitle explaining how to quickly translate</note>
       </trans-unit>
+      <trans-unit id="ecdd78e2f23c4ebf968e233cb85a948b06ee6b5b" datatype="html">
+        <source>ICU Builder (prototype)</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
+          <context context-type="linenumber">6</context>
+        </context-group>
+        <note priority="1" from="description">label for slide toggle for icu builder</note>
+      </trans-unit>
       <trans-unit id="9068be38c68d19872800cfcd8d930cb80a81b649" datatype="html">
         <source>meaning: </source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">11</context>
+          <context context-type="linenumber">25</context>
         </context-group>
         <note priority="1" from="description">short label before term meaning</note>
       </trans-unit>
@@ -250,7 +259,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">12</context>
+          <context context-type="linenumber">26</context>
         </context-group>
         <note priority="1" from="description">short label before term description</note>
       </trans-unit>
@@ -259,7 +268,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">15</context>
+          <context context-type="linenumber">29</context>
         </context-group>
         <note priority="1" from="description">short label before term locations list</note>
       </trans-unit>
@@ -268,7 +277,7 @@
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">23</context>
+          <context context-type="linenumber">37</context>
         </context-group>
         <note priority="1" from="description">button to save translation</note>
       </trans-unit>

@@ -31,7 +31,7 @@
   <msg id="592313674725148714" desc="github repo of new project"><source>app/forms/new-project/new-project.component.ts:12</source>github repo</msg>
   <msg id="408634011030808121" desc="i18n directory of new project"><source>app/forms/new-project/new-project.component.ts:15</source>i18n directory</msg>
   <msg id="1368702990054357276" desc="source file name of new project"><source>app/forms/new-project/new-project.component.ts:18</source>source file name</msg>
-  <msg id="2159130950882492111" desc="button to cancel form edition"><source>app/forms/new-project/new-project.component.ts:24</source><source>app/forms/msg-edit/msg-edit.component.ts:22</source>Cancel</msg>
+  <msg id="2159130950882492111" desc="button to cancel form edition"><source>app/forms/new-project/new-project.component.ts:24</source><source>app/forms/msg-edit/msg-edit.component.ts:36</source>Cancel</msg>
   <msg id="3249513483374643425" desc="button to create new project"><source>app/forms/new-project/new-project.component.ts:25</source>Add</msg>
   <msg id="7578181986792041076" desc="Title on Reload source icon"><source>app/project/project.component.ts:3</source>Reload source</msg>
   <msg id="7192614753465442940" desc="Title on Export icon"><source>app/project/project.component.ts:4</source>Export current translation</msg>
@@ -47,8 +47,9 @@
   <msg id="5399203141838435392" desc="label for slide toggle"><source>app/project/project.component.ts:32</source>Untranslated only</msg>
   <msg id="397098723873502323" desc="button to close info"><source>app/widgets/progression/progression.component.ts:11</source>Done</msg>
   <msg id="5968499761399826869" desc="card subtitle explaining how to quickly translate"><source>app/forms/msg-edit/msg-edit.component.ts:2</source>Press ctrl-enter to save &amp; go to next untranslated message</msg>
-  <msg id="6479673075890817401" desc="short label before term meaning"><source>app/forms/msg-edit/msg-edit.component.ts:11</source>meaning: </msg>
-  <msg id="4148835250050005563" desc="short label before term description"><source>app/forms/msg-edit/msg-edit.component.ts:12</source>description: </msg>
-  <msg id="6644602411705618484" desc="short label before term locations list"><source>app/forms/msg-edit/msg-edit.component.ts:15</source>Locations:</msg>
-  <msg id="303572699545449161" desc="button to save translation"><source>app/forms/msg-edit/msg-edit.component.ts:23</source>Save &amp; Next</msg>
+  <msg id="274059794441913141" desc="label for slide toggle for icu builder"><source>app/forms/msg-edit/msg-edit.component.ts:6</source>ICU Builder (prototype)</msg>
+  <msg id="6479673075890817401" desc="short label before term meaning"><source>app/forms/msg-edit/msg-edit.component.ts:25</source>meaning: </msg>
+  <msg id="4148835250050005563" desc="short label before term description"><source>app/forms/msg-edit/msg-edit.component.ts:26</source>description: </msg>
+  <msg id="6644602411705618484" desc="short label before term locations list"><source>app/forms/msg-edit/msg-edit.component.ts:29</source>Locations:</msg>
+  <msg id="303572699545449161" desc="button to save translation"><source>app/forms/msg-edit/msg-edit.component.ts:37</source>Save &amp; Next</msg>
 </messagebundle>
