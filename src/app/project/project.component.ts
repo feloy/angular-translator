@@ -131,7 +131,7 @@ export class ProjectComponent implements OnInit, OnDestroy, CanComponentDeactiva
     this.router.navigate(['/project', this.project.id, 'edit']);
   }
 
-  public canDeactivate(): Observable<boolean> | Promise<boolean> | boolean {
+  public canDeactivate(): Observable<boolean> | boolean {
     if (this.needSave) {
       const snackBarRef = this.snackBar.open('Changes need to be saved', 'Ignore', { duration: 3000 });
 
