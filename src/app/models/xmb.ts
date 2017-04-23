@@ -72,7 +72,42 @@ export class Xmb {
   }
 
   static export(src: Source, tr: Translation): string {
+    let xmb = `<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE messagebundle [
+<!ELEMENT messagebundle (msg)*>
+<!ATTLIST messagebundle class CDATA #IMPLIED>
 
-    return '';
+<!ELEMENT msg (#PCDATA|ph|source)*>
+<!ATTLIST msg id CDATA #IMPLIED>
+<!ATTLIST msg seq CDATA #IMPLIED>
+<!ATTLIST msg name CDATA #IMPLIED>
+<!ATTLIST msg desc CDATA #IMPLIED>
+<!ATTLIST msg meaning CDATA #IMPLIED>
+<!ATTLIST msg obsolete (obsolete) #IMPLIED>
+<!ATTLIST msg xml:space (default|preserve) "default">
+<!ATTLIST msg is_hidden CDATA #IMPLIED>
+
+<!ELEMENT source (#PCDATA)>
+
+<!ELEMENT ph (#PCDATA|ex)*>
+<!ATTLIST ph name CDATA #REQUIRED>
+
+<!ELEMENT ex (#PCDATA)>
+]>
+<messagebundle>`;
+
+    src.msgs.map((s: Msg) => {
+      let target = '';
+      const list = tr.msgs.filter((m: Msg) => m.id === s.id);
+      if (list.length > 0) {
+        target = list[0].content;
+      }
+      xmb += `
+  <msg id="` + s.id + `">` + target + `</msg>`;
+    });
+
+    xmb += `
+</messagebundle>`;
+    return xmb;
   }
 }
