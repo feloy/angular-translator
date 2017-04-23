@@ -71,6 +71,14 @@ export class MsgEditComponent implements OnInit {
     });
   }
 
+  public onControlEnter() {
+    if (this.form.get('tr').value) {
+      this.onSave();
+    } else {
+      this.form.get('tr').setValue(this.form.get('src').value);
+    }
+  }
+
   public onSave() {
     this.projects.setTranslatedMsg(this.msgId, this.form.get('tr').value);
   }

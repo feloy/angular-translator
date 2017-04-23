@@ -10,7 +10,7 @@
 
       <div class="taflex" *ngIf="srcMsg.icu === null || !icuBuilder">
         <textarea readonly formControlName="src"></textarea>
-        <textarea formControlName="tr" (keyup.control.enter)="onSave()"></textarea>
+        <textarea formControlName="tr" (keyup.control.enter)="onControlEnter()"></textarea>
       </div>
       <div *ngIf="icuBuilder && srcMsg.icu !== null && srcMsg.icu.type === 'plural'">
         <app-plural-editor [content]="srcMsg.icu"></app-plural-editor>
