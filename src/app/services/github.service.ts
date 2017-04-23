@@ -1,7 +1,7 @@
 import { Xlf } from './../models/xlf';
 import { Xmb } from './../models/xmb';
 import { Translation } from './../models/translation';
-import { Source, Msg } from './../models/source';
+import { Source, Msg, Location } from './../models/source';
 import { Project } from './../models/project';
 import { Injectable, EventEmitter } from '@angular/core';
 import { Http, Response } from '@angular/http';
@@ -107,5 +107,25 @@ export class GithubService {
         obs.next(ret);
       });
     return obs;
+  }
+
+  public getLocation(p: Project, location: Location): Observable<string> {
+    let filename = location.sourcefile;
+    if (filename.substr(-3) === '.ts') {
+      filename = filename.substr(0, filename.length - 3) + '.html';
+    }
+
+    const url = 'https://raw.githubusercontent.com/' + p.repo + '/master/src/' + filename;
+    return this.http.get(url)
+      .map(
+      (resp: Response) => {
+        const data = resp.text();
+        const lines = data.split('\n');
+        return lines.slice(Math.max(0, location.linenumber - 2), location.linenumber + 1).join('\n');
+      },
+      err => {
+        return '';
+      });
+
   }
 }

@@ -15,10 +15,12 @@ import 'rxjs/add/observable/combineLatest';
 export class MsgEditComponent implements OnInit {
 
   public icuBuilder = false;
+  public locationsDetails = false;
 
   public trMsg: Msg = null;
   public srcMsg: Msg = null;
 
+  public projectId: number;
   private msgId: string;
 
   form: FormGroup;
@@ -32,29 +34,32 @@ export class MsgEditComponent implements OnInit {
     this.createForm();
 
     const msgId$ = this.route.params.pluck('msgid');
+    const projectId$ = this.route.parent.params.pluck('id');
     const tr$ = this.projects.currentTranslation$;
     const src$ = this.projects.currentSource$;
 
-    Observable.combineLatest(msgId$, tr$, src$).subscribe(([msgId, tr, src]: [string, Translation, Source]) => {
-      if (msgId === null || tr === null || src === null) {
-        this.trMsg = null;
-        this.srcMsg = null;
-      } else {
-        this.msgId = msgId;
+    Observable.combineLatest(projectId$, msgId$, tr$, src$)
+      .subscribe(([projectId, msgId, tr, src]: [string, string, Translation, Source]) => {
+        if (projectId === null || msgId === null || tr === null || src === null) {
+          this.trMsg = null;
+          this.srcMsg = null;
+        } else {
+          this.projectId = +projectId;
+          this.msgId = msgId;
 
-        const trList = tr.msgs.filter((m: Msg) => m.id === msgId);
-        this.trMsg = trList.length > 0 ? trList[0] : { id: msgId, content: '', icu: null };
+          const trList = tr.msgs.filter((m: Msg) => m.id === msgId);
+          this.trMsg = trList.length > 0 ? trList[0] : { id: msgId, content: '', icu: null };
 
-        const srcList = src.msgs.filter((m: Msg) => m.id === msgId);
-        this.srcMsg = srcList.length > 0 ? srcList[0] : { id: msgId, content: '', icu: null };
+          const srcList = src.msgs.filter((m: Msg) => m.id === msgId);
+          this.srcMsg = srcList.length > 0 ? srcList[0] : { id: msgId, content: '', icu: null };
 
-        this.createForm();
-        this.form.setValue({
-          src: this.srcMsg.content,
-          tr: this.trMsg.content
-        });
-      }
-    });
+          this.createForm();
+          this.form.setValue({
+            src: this.srcMsg.content,
+            tr: this.trMsg.content
+          });
+        }
+      });
   }
 
   private createForm() {
@@ -76,5 +81,9 @@ export class MsgEditComponent implements OnInit {
       src: this.srcMsg.content,
       tr: this.trMsg.content
     });
+  }
+
+  public locationsDetailsChange() {
+
   }
 }

@@ -34,6 +34,7 @@ import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
 import { HomeComponent } from './home/home.component';
 import { PluralEditorComponent } from './controls/plural-editor/plural-editor.component';
 import { SelectEditorComponent } from './controls/select-editor/select-editor.component';
+import { LocationDetailsComponent } from './widgets/location-details/location-details.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { SelectEditorComponent } from './controls/select-editor/select-editor.co
     HomeComponent,
     PluralEditorComponent,
     SelectEditorComponent,
+    LocationDetailsComponent,
   ],
   imports: [
     BrowserModule,

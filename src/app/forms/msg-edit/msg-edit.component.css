@@ -6,5 +6,5 @@ md-card { margin: 16px 0;}
 .buttons { text-align: right; }
 .infos { margin: 0 16px; }
 .locations { margin: 16px 0; }
-.locations > .title { font-weight: bold; }
+.locations > div > .title { font-weight: bold; }
 .locations > .location { margin: 8px 0; }

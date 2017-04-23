@@ -26,8 +26,16 @@
         <div *ngIf="srcMsg.desc"><span i18n="short label before term description">description: </span>{{srcMsg.desc}}</div>
 
         <div *ngIf="srcMsg.locations.length" class="locations">
-          <div class="title" i18n="short label before term locations list">Locations:</div>
-          <div *ngFor="let location of srcMsg.locations" class="location">{{location.sourcefile}}:{{location.linenumber}}</div>
+          <div>
+            <span class="title" i18n="short label before term locations list">Locations:</span>
+            <md-slide-toggle color="primary" i18n="label for slide toggle for locations details" [(ngModel)]="locationsDetails" [ngModelOptions]="{standalone: true}">view details</md-slide-toggle>
+          </div>
+          <ng-template [ngIf]="!locationsDetails">
+            <div *ngFor="let location of srcMsg.locations" class="location">{{location.sourcefile}}:{{location.linenumber}}</div>
+          </ng-template>
+          <ng-template [ngIf]="locationsDetails">
+            <app-location-details *ngFor="let location of srcMsg.locations" [projectId]="projectId" [location]="location"></app-location-details>
+          </ng-template>
         </div>
       </div>
     </form>
