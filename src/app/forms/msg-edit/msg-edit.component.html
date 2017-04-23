@@ -1,9 +1,10 @@
 <md-card *ngIf="trMsg !== null && srcMsg !== null">
+  <md-card-subtitle>Press ctrl-enter to save &amp; go to next untranslated message</md-card-subtitle>
   <md-card-content>
     <form [formGroup]="form">
       <div class="taflex">
         <textarea readonly formControlName="src"></textarea>
-        <textarea formControlName="tr"></textarea>
+        <textarea formControlName="tr" (keyup.control.enter)="onSave()"></textarea>
       </div>
 
       <div class="infos">
@@ -19,6 +20,6 @@
   </md-card-content>
   <md-card-actions align="end">
     <button md-button (click)="onCancel()" *ngIf="!form.pristine" i18n="button to cancel form edition">Cancel</button>
-    <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine" i18n="button to save translation">Save</button>
+    <button md-raised-button color="primary" (click)="onSave()" [disabled]="form.pristine" i18n="button to save translation">Save &amp; Next</button>
   </md-card-actions>
 </md-card>

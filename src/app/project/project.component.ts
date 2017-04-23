@@ -1,6 +1,6 @@
 import { ProjectsService } from './../services/projects.service';
 import { Translation } from './../models/translation';
-import { Source } from './../models/source';
+import { Source, Msg } from './../models/source';
 import { GithubService } from './../services/github.service';
 import { Project } from './../models/project';
 import { Component, OnInit, OnDestroy } from '@angular/core';
@@ -39,6 +39,15 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
     this.projects.currentTranslation$.subscribe((tr: Translation) => {
       this.translation = tr;
+      // Go to first untranslated message
+      if (this.source && this.translation) {
+        const list = this.source.msgs.filter((m: Msg) => {
+          return this.translation.msgs.filter((t: Msg) => t.id === m.id && t.content !== '').length === 0;
+        });
+        if (list.length > 0) {
+          this.navigateTo(list[0].id);
+        }
+      }
     });
   }
 
@@ -71,6 +80,10 @@ export class ProjectComponent implements OnInit, OnDestroy {
   }
 
   public onMsgClicked(msgId: string) {
+    this.navigateTo(msgId);
+  }
+
+  private navigateTo(msgId: string) {
     this.router.navigate(['/project', this.project.id, msgId]);
   }
 
