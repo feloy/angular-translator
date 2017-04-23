@@ -1,195 +1,93 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
-  <file source-language="en" datatype="plaintext" original="ng2.template">
+<?xml version="1.0" encoding="UTF-8" ?><xliff xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="urn:oasis:names:tc:xliff:document:1.2 http://docs.oasis-open.org/xliff/v1.2/os/xliff-core-1.2-strict.xsd" xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2" srcLang="en" trgLang="fr">
+  <file original="ng2.template" datatype="plaintext" source-language="en" target-language="fr">
     <body>
-      <trans-unit id="efaa0a6abc1e9d85e2bf61f2b3c5bf7888744a48" datatype="html">
+      <trans-unit id="efaa0a6abc1e9d85e2bf61f2b3c5bf7888744a48">
         <source>Angular Translator</source>
         <target>Angular Translator</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/frame/frame.component.ts</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <note priority="1" from="description">App title</note>
       </trans-unit>
-      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c" datatype="html">
+      <trans-unit id="92eee6be6de0b11c924e3ab27db30257159c0a7c">
         <source>Home</source>
         <target>Home</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
-          <context context-type="linenumber">5</context>
-        </context-group>
-        <note priority="1" from="description">Back to home page entry in sidenav</note>
       </trans-unit>
-      <trans-unit id="0ef59545c4a6617f90a1633358f3337ae739a29f" datatype="html">
+      <trans-unit id="0ef59545c4a6617f90a1633358f3337ae739a29f">
         <source>New project...</source>
         <target>New project...</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-        <note priority="1" from="description">Add a new project in sidenav</note>
       </trans-unit>
-      <trans-unit id="2e1546d8b73413d4e8cc90cf959884c67655f721" datatype="html">
+      <trans-unit id="38717fe18c338f68dbec24a0c196d614e08d5959">
+        <source>Interface Language</source>
+        <target>Langue de l'interface</target>
+      </trans-unit>
+      <trans-unit id="2e1546d8b73413d4e8cc90cf959884c67655f721">
         <source>Create new project</source>
         <target>Create new project</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">1</context>
-        </context-group>
-        <note priority="1" from="description">Title of form used to create a new project</note>
       </trans-unit>
-      <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
+      <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc">
         <source>name</source>
         <target>name</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <note priority="1" from="description">name of new project</note>
       </trans-unit>
-      <trans-unit id="dc660f0b2b272ccbe6a7f7a71ffb56b851ee8b85" datatype="html">
+      <trans-unit id="dc660f0b2b272ccbe6a7f7a71ffb56b851ee8b85">
         <source>icon</source>
         <target>icon</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-        <note priority="1" from="description">icon of new project</note>
       </trans-unit>
-      <trans-unit id="d7aefa90434e8d85b2b5648b7a39ffb3ceb9f9c8" datatype="html">
+      <trans-unit id="d7aefa90434e8d85b2b5648b7a39ffb3ceb9f9c8">
         <source>github repo</source>
         <target>github repo</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
-        <note priority="1" from="description">github repo of new project</note>
       </trans-unit>
-      <trans-unit id="2a0ff0eadb02b2bc6e6e85056d65e72ff805ce2b" datatype="html">
+      <trans-unit id="2a0ff0eadb02b2bc6e6e85056d65e72ff805ce2b">
         <source>i18n directory</source>
         <target>i18n directory</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">15</context>
-        </context-group>
-        <note priority="1" from="description">i18n directory of new project</note>
       </trans-unit>
-      <trans-unit id="9cef3758593466e5f84fa4630c18df2c23133648" datatype="html">
+      <trans-unit id="9cef3758593466e5f84fa4630c18df2c23133648">
         <source>source file name</source>
         <target>source file name</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">18</context>
-        </context-group>
-        <note priority="1" from="description">source file name of new project</note>
       </trans-unit>
-      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
+      <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7">
         <source>Cancel</source>
         <target>Cancel</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">24</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">8</context>
-        </context-group>
-        <note priority="1" from="description">button to cancel form edition</note>
       </trans-unit>
-      <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
+      <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9">
         <source>Add</source>
         <target>Add</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
-          <context context-type="linenumber">25</context>
-        </context-group>
-        <note priority="1" from="description">button to create new project</note>
       </trans-unit>
-      <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13" datatype="html">
+      <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13">
         <source>Export as XMB</source>
         <target>Export as XMB</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">6</context>
-        </context-group>
-        <note priority="1" from="description">Menu entry to export translation as XMB</note>
       </trans-unit>
-      <trans-unit id="02f7ed0809aa6574b91bfffd1c606a68628f651a" datatype="html">
+      <trans-unit id="02f7ed0809aa6574b91bfffd1c606a68628f651a">
         <source>Export as Xliff</source>
         <target>Export as Xliff</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">7</context>
-        </context-group>
-        <note priority="1" from="description">Menu entry to export translation as XLIFF</note>
       </trans-unit>
-      <trans-unit id="a2f358ba57fac9600cf09e3ba56cf5769c196032" datatype="html">
+      <trans-unit id="a2f358ba57fac9600cf09e3ba56cf5769c196032">
         <source>repo:</source>
         <target>repo:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="13acd2cb41d8e13276f98c81163175960949c9cc" datatype="html">
+      <trans-unit id="13acd2cb41d8e13276f98c81163175960949c9cc">
         <source>i18n dir:</source>
         <target>i18n dir:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="a1afad68767b9026b2681274cba81cd7e2ec1789" datatype="html">
+      <trans-unit id="a1afad68767b9026b2681274cba81cd7e2ec1789">
         <source>source file:</source>
         <target>source file:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="60726d99044c1649e0b4d5ec8e05b875e6477322" datatype="html">
+      <trans-unit id="60726d99044c1649e0b4d5ec8e05b875e6477322">
         <source>translations:</source>
         <target>translations:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">12</context>
-        </context-group>
       </trans-unit>
-      <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41" datatype="html">
-        <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x id="INTERPOLATION"/> messages} }</source>
-        <target>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x id="INTERPOLATION"/> messages} }</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">13</context>
-        </context-group>
-        <note priority="1" from="description">number of messages to translate</note>
+      <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41">
+        <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {&lt;x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/&gt; messages} }</source>
+        <target>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {&lt;x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/&gt; messages} }</target>
       </trans-unit>
-      <trans-unit id="67b56c103339c4bf4d91e59245a975340642a10e" datatype="html">
+      <trans-unit id="67b56c103339c4bf4d91e59245a975340642a10e">
         <source>Select a translation: </source>
         <target>Select a translation:</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/project/project.component.ts</context>
-          <context context-type="linenumber">19</context>
-        </context-group>
-        <note priority="1" from="description">label to pick a translation in a select</note>
       </trans-unit>
-      <trans-unit id="8dd413cee2228118c536f503709329a4d1a395e2" datatype="html">
+      <trans-unit id="8dd413cee2228118c536f503709329a4d1a395e2">
         <source>Done</source>
         <target>Done</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/widgets/progression/progression.component.ts</context>
-          <context context-type="linenumber">11</context>
-        </context-group>
-        <note priority="1" from="description">button to close info</note>
       </trans-unit>
-      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe">
         <source>Save</source>
         <target>Save</target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">app/forms/msg-edit/msg-edit.component.ts</context>
-          <context context-type="linenumber">9</context>
-        </context-group>
-        <note priority="1" from="description">button to save translation</note>
       </trans-unit>
     </body>
   </file>
