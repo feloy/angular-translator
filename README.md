@@ -1,28 +1,18 @@
-# AngularTranslator
+# Angular Translator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0.
+**Angular Translator** helps you translating your Angular application.
 
-## Development server
+Translation applications like this one are generally not specialized for a specific framework.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+This application prefers to specialize in the translation of Angular applications only, so it can integrate perfectly with the framework.
 
-## Code scaffolding
+## How it works
+The `ng-xi18n` Angular tool is responsible for extracting from the app sources the terms to translate. This tool creates a `messages.xmb` (or `messages.xlf`) file containing all the necessary information for the human translator to do his job.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive/pipe/service/class/module`.
+**Angular Translator** gets this `messages.xmb` file and uses it at the reference for the terms that have to be translated. It is called the *source file* in the app.
 
-## Build
+In **Angular Translator**, you then have to declare the different file names where the different translations for specific languages will be stored. When you begin, you do not need to create these translation files, the app will do that for you. They all called the * translations files* in the app.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+When you have finished translating for a specific language, you can export the translation file for this language and place it beside your source file in your source repository. If you decide to work again on the translations for this same language, the translations you have made earlier will be extracted from this translation file.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+When you update your app and add or remove terms to translate and regenerate the `messages.xmb` source file with `ng-xi18n`, you do not need to merge the differences to your translation files. Because **Angular Translator** get the *source file* as the reference, it will handle correclty the terms removed or added.
