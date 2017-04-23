@@ -1,10 +1,24 @@
 <md-card *ngIf="trMsg !== null && srcMsg !== null">
   <md-card-subtitle i18n="card subtitle explaining how to quickly translate">Press ctrl-enter to save &amp; go to next untranslated message</md-card-subtitle>
   <md-card-content>
+
+    <div *ngIf="srcMsg.icu !== null">
+      <md-slide-toggle color="primary" i18n="label for slide toggle for icu builder" [(ngModel)]="icuBuilder">ICU Builder (prototype)</md-slide-toggle>
+    </div>
+
     <form [formGroup]="form">
-      <div class="taflex">
+
+      <div class="taflex" *ngIf="srcMsg.icu === null || !icuBuilder">
         <textarea readonly formControlName="src"></textarea>
         <textarea formControlName="tr" (keyup.control.enter)="onSave()"></textarea>
+      </div>
+      <div *ngIf="icuBuilder && srcMsg.icu !== null && srcMsg.icu.type === 'plural'">
+        <app-plural-editor [content]="srcMsg.icu"></app-plural-editor>
+        <app-plural-editor [content]="trMsg.icu"></app-plural-editor>
+      </div>
+      <div *ngIf="icuBuilder && srcMsg.icu !== null && srcMsg.icu.type === 'select'">
+        <app-select-editor [content]="srcMsg.icu"></app-select-editor>
+        <app-select-editor [content]="trMsg.icu"></app-select-editor>
       </div>
 
       <div class="infos">

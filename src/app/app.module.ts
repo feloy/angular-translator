@@ -32,6 +32,8 @@ import { ProgressionComponent } from './widgets/progression/progression.componen
 import { SourceMsgsListComponent } from './source-msgs-list/source-msgs-list.component';
 import { MsgEditComponent } from './forms/msg-edit/msg-edit.component';
 import { HomeComponent } from './home/home.component';
+import { PluralEditorComponent } from './controls/plural-editor/plural-editor.component';
+import { SelectEditorComponent } from './controls/select-editor/select-editor.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +46,8 @@ import { HomeComponent } from './home/home.component';
     SourceMsgsListComponent,
     MsgEditComponent,
     HomeComponent,
+    PluralEditorComponent,
+    SelectEditorComponent,
   ],
   imports: [
     BrowserModule,

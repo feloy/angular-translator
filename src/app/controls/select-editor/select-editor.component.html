@@ -1,0 +1,9 @@
+<fieldset class="main"><legend>select</legend>
+  <dl>
+    <ng-template ngFor let-case [ngForOf]="content?.value">
+      <dt>{{case.key}}</dt>
+      <dd *ngIf="!isIcu(case.value)">{{case.value}}</dd>
+      <dd *ngIf="isIcu(case.value)"><app-select-editor [content]="case.value"></app-select-editor></dd>
+    </ng-template>
+  </dl>
+</fieldset>
