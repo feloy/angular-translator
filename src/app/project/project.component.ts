@@ -33,9 +33,9 @@ export class ProjectComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.route.data.pluck('project').subscribe((p: Project) => {
+      this.project = p;
       this.progression = null;
       this.setSource(null);
-      this.project = p;
       this.onReload();
     });
 

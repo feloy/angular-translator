@@ -1,3 +1,4 @@
+import { Icu } from './icu';
 import { Translation } from './translation';
 import { Source, Msg } from './source';
 
@@ -16,7 +17,8 @@ export class Xlf {
         const msg: Msg = {
           id: domMsg.getAttribute('id'),
           locations: [],
-          content: domMsg.getElementsByTagName('source')[0].innerHTML
+          content: domMsg.getElementsByTagName('source')[0].innerHTML,
+          icu: Icu.parse(domMsg.getElementsByTagName('source')[0].innerHTML)
         };
 
         const notes = domMsg.getElementsByTagName('note');
@@ -70,7 +72,8 @@ export class Xlf {
         const domMsg = domMsgs.item(i);
         const msg: Msg = {
           id: domMsg.getAttribute('id'),
-          content: domMsg.getElementsByTagName('target')[0].innerHTML
+          content: domMsg.getElementsByTagName('target')[0].innerHTML,
+          icu: Icu.parse(domMsg.getElementsByTagName('target')[0].innerHTML)
         };
 
         translation.msgs.push(msg);

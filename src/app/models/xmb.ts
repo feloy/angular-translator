@@ -1,3 +1,4 @@
+import { Icu } from './icu';
 import { Translation } from './translation';
 import { Source, Msg } from './source';
 
@@ -18,7 +19,8 @@ export class Xmb {
           desc: domMsg.getAttribute('desc'),
           meaning: domMsg.getAttribute('meaning'),
           locations: [],
-          content: ''
+          content: '',
+          icu: null
         };
         const domLocations = domMsg.getElementsByTagName('source');
         for (let j = domLocations.length - 1; j >= 0; j--) {
@@ -28,6 +30,7 @@ export class Xmb {
           domMsg.removeChild(domLocation);
         }
         msg.content = domMsg.innerHTML;
+        msg.icu = Icu.parse(domMsg.innerHTML);
         source.msgs.push(msg);
       }
 
@@ -49,7 +52,8 @@ export class Xmb {
         const domMsg = domMsgs.item(i);
         const msg: Msg = {
           id: domMsg.getAttribute('id'),
-          content: ''
+          content: '',
+          icu: null
         };
         const domLocations = domMsg.getElementsByTagName('source');
         for (let j = domLocations.length - 1; j >= 0; j--) {
@@ -57,6 +61,7 @@ export class Xmb {
           domMsg.removeChild(domLocation);
         }
         msg.content = domMsg.innerHTML;
+        msg.icu = Icu.parse(domMsg.innerHTML);
         translation.msgs.push(msg);
       }
 
