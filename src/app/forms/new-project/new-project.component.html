@@ -1,5 +1,5 @@
 <md-toolbar *ngIf="!project" i18n="Title of form used to create a new project">Create new project</md-toolbar>
-<md-toolbar *ngIf="project" i18n="Title of form used to create a new project">{{project.name}}</md-toolbar>
+<md-toolbar *ngIf="project" i18n="Title of form used to edit project">{{project.name}} edition</md-toolbar>
 
 <div class="main">
   <form [formGroup]="form">
