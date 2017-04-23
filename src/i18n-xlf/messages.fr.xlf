@@ -50,6 +50,14 @@
         <source>Add</source>
         <target>Créer</target>
       </trans-unit>
+      <trans-unit id="cd4828aa8a53cb59ac0690fc3406344e7cdfa7ac" datatype="html">
+        <source>Reload source</source>
+        <target>Recharger source</target>
+      </trans-unit>
+      <trans-unit id="69505e72ac65040f4532c2fe87446d95300024d8" datatype="html">
+        <source>Export current translation</source>
+        <target>Exporter traduction en cours</target>
+      </trans-unit>
       <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13" datatype="html">
         <source>Export as XMB</source>
         <target>Exporter en XMB</target>
@@ -82,6 +90,10 @@
         <source>Select a translation: </source>
         <target>Sélectionnez une traduction :</target>
       </trans-unit>
+      <trans-unit id="f9e6cda4afcddc7fdc2d24f589e23c112b0c11ae" datatype="html">
+        <source>translation</source>
+        <target>traduction</target>
+      </trans-unit>
       <trans-unit id="7f5338a0434962f6829b3791637981dc742c57c9" datatype="html">
         <source>Untranslated only</source>
         <target>Non traduits seulement</target>
@@ -89,6 +101,22 @@
       <trans-unit id="8dd413cee2228118c536f503709329a4d1a395e2" datatype="html">
         <source>Done</source>
         <target>OK</target>
+      </trans-unit>
+      <trans-unit id="1e775ca4b70091d518f84bebf078709360f1f076" datatype="html">
+        <source>Press ctrl-enter to save &amp; go to next untranslated message</source>
+        <target>Pressez ctrl-Entrée pour enregistrer &amp; passer au terme non traduit suivant</target>
+      </trans-unit>
+      <trans-unit id="9068be38c68d19872800cfcd8d930cb80a81b649" datatype="html">
+        <source>meaning: </source>
+        <target>signification :</target>
+      </trans-unit>
+      <trans-unit id="a4c395e6637b8ca3f27c273232e5e546fbbf90fd" datatype="html">
+        <source>description: </source>
+        <target>description :</target>
+      </trans-unit>
+      <trans-unit id="95638a7fdcf1d5868a09373df5bd033848e9fe5e" datatype="html">
+        <source>Locations:</source>
+        <target>Locations :</target>
       </trans-unit>
       <trans-unit id="e061e87ae50c058e9c44967097bf9d29b31d2b8f" datatype="html">
         <source>Save &amp; Next</source>
