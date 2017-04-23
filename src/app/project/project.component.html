@@ -15,9 +15,8 @@
 
   <div class="header">
     <div class="info">
-      <span i18n>repo:</span> {{project.repo}}
-      <div *ngIf="!translation"><span i18n>i18n dir:</span> {{project.i18ndir}}<br><span i18n>source file:</span>      {{project.source}}<br><span i18n>translations:</span> {{project.translations}}</div>
-      <div *ngIf="source && !translation" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</div>
+      {{project.repo}}
+      <div *ngIf="source" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</div>
     </div>
 
     <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
@@ -30,7 +29,7 @@
 
   <router-outlet></router-outlet>
 
-  <md-slide-toggle *ngIf="translation" color="primary" i18n="label for slide toggle" [(ngModel)]="untranslatedOnlyToggle">Untranslated only</md-slide-toggle>
+  <md-slide-toggle class="untrans" *ngIf="translation" color="primary" i18n="label for slide toggle" [(ngModel)]="untranslatedOnlyToggle">Untranslated only</md-slide-toggle>
 
   <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation"
     [untranslatedOnly]="untranslatedOnlyToggle"></app-source-msgs-list>

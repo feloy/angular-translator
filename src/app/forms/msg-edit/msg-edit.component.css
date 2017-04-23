@@ -1,4 +1,4 @@
-md-card { margin: 16px 0;}
+md-card { margin: 0;}
 
 .taflex { display: flex; }
 .taflex > textarea { margin: 8px; padding: 4px; flex-grow: 1; font-size: 20px; }
