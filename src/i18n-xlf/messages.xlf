@@ -29,12 +29,21 @@
         </context-group>
         <note priority="1" from="description">Add a new project in sidenav</note>
       </trans-unit>
+      <trans-unit id="004b222ff9ef9dd4771b777950ca1d0e4cd4348a" datatype="html">
+        <source>About</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
+          <context context-type="linenumber">20</context>
+        </context-group>
+        <note priority="1" from="description">About in sidenav</note>
+      </trans-unit>
       <trans-unit id="38717fe18c338f68dbec24a0c196d614e08d5959" datatype="html">
         <source>Interface Language</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/frame-sidenav/frame-sidenav.component.ts</context>
-          <context context-type="linenumber">18</context>
+          <context context-type="linenumber">23</context>
         </context-group>
         <note priority="1" from="description">subheader in sidenav for interface languages</note>
       </trans-unit>
@@ -47,14 +56,14 @@
         </context-group>
         <note priority="1" from="description">Title of form used to create a new project</note>
       </trans-unit>
-      <trans-unit id="7eefe3a1be08dc2b873e5de922a78d06e31dd539" datatype="html">
-        <source><x id="INTERPOLATION"/></source>
+      <trans-unit id="19f8eb33feeb9169d89ef71517146736d769b7f5" datatype="html">
+        <source><x id="INTERPOLATION"/> edition</source>
         <target/>
         <context-group purpose="location">
           <context context-type="sourcefile">app/forms/new-project/new-project.component.ts</context>
           <context context-type="linenumber">2</context>
         </context-group>
-        <note priority="1" from="description">Title of form used to create a new project</note>
+        <note priority="1" from="description">Title of form used to edit project</note>
       </trans-unit>
       <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
         <source>name</source>
