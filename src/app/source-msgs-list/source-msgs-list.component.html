@@ -1,9 +1,9 @@
 <md-nav-list>
   <ng-template ngFor let-msg [ngForOf]="source.msgs" >
     <md-list-item *ngIf="!untranslatedOnly || getTranslation(msg.id) === ''" [routerLink]="[ '/project', projectId, msg.id ]" routerLinkActive="active">
-      <md-icon md-list-icon>translatea</md-icon>
-      <h3 md-line>{{msg.content}}</h3>
-      <p md-line>{{getTranslation(msg.id)}}</p>
+      <md-icon class="set-active" md-list-icon>translatea</md-icon>
+      <h3 class="set-active" md-line>{{msg.content}}</h3>
+      <p class="set-active" md-line>{{getTranslation(msg.id)}}</p>
     </md-list-item>
   </ng-template>
 </md-nav-list>

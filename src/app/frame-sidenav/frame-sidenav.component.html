@@ -1,23 +1,23 @@
 <md-nav-list>
 
 	<md-list-item routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-		<md-icon md-list-icon>home</md-icon>
-		<a md-line i18n="Back to home page entry in sidenav">Home</a>
+		<md-icon md-list-icon class="set-active">home</md-icon>
+		<a md-line class="set-active" i18n="Back to home page entry in sidenav">Home</a>
 	</md-list-item>
 
 	<md-list-item *ngFor="let project of (projects | async)" [routerLink]="['/project', project.id]" routerLinkActive="active">
-		<md-icon md-list-icon>{{project.icon}}</md-icon>
-		<a md-line>{{project.name}}</a>
+		<md-icon md-list-icon class="set-active">{{project.icon}}</md-icon>
+		<a md-line class="set-active">{{project.name}}</a>
 	</md-list-item>
 
 	<md-list-item routerLink="/newproject" routerLinkActive="active">
-		<md-icon md-list-icon>add</md-icon>
-		<a md-line i18n="Add a new project in sidenav">New project...</a>
+		<md-icon md-list-icon class="set-active">add</md-icon>
+		<a md-line class="set-active" i18n="Add a new project in sidenav">New project...</a>
 	</md-list-item>
 
 	<md-list-item routerLink="/about" routerLinkActive="active">
-		<md-icon md-list-icon>tag_faces</md-icon>
-		<a md-line i18n="About in sidenav">About</a>
+		<md-icon md-list-icon class="set-active">tag_faces</md-icon>
+		<a md-line class="set-active" i18n="About in sidenav">About</a>
 	</md-list-item>
 
 	<h3 md-subheader i18n="subheader in sidenav for interface languages">Interface Language</h3>

@@ -1,6 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+@include mat-core();
+
 @import url(https://fonts.googleapis.com/icon?family=Material+Icons);
 // base styles
+
+$primary: mat-palette($mat-indigo);
+$accent:  mat-palette($mat-pink);
+$theme: mat-light-theme($primary, $accent);
+@include angular-material-theme($theme);
 
 body {  
   font-family: 'Roboto', sans-serif;
@@ -31,4 +39,10 @@ md-sidenav-layout { background-color: #eceff1; }
 // Elements directly below fixed toolbar
 .app-belowtoolbar { margin-top: 64px; }
 
-md-list-item.active { background-color: #CFD8DC; } 
+md-list-item.active {
+  background-color: #eceff1;
+  .set-active { 
+    font-weight: bold;
+    color: mat-color($accent);
+  } 
+}
