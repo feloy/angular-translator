@@ -1,8 +1,6 @@
 import { Translation } from './translation';
 import { Source, Msg } from './source';
 
-import js2xliff from 'xliff/jsToXliff12';
-
 export class Xlf {
 
   static parseSource(data: string): Source {
@@ -84,30 +82,29 @@ export class Xlf {
   }
 
   static export(src: Source, tr: Translation): string {
-    const map = {};
-    src.msgs.map(s => {
+
+    let xlf = `<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>`;
+
+    src.msgs.map((s: Msg) => {
       let target = '';
       const list = tr.msgs.filter((m: Msg) => m.id === s.id);
       if (list.length > 0) {
         target = list[0].content;
       }
-      map[s.id] = {
-        source: s.content,
-        target: target
-      };
+      xlf += `
+      <trans-unit id="` + s.id + `" datatype="html">
+        <source>` + s.content + `</source>
+        <target>` + target + `</target>
+      </trans-unit>`;
     });
 
-    const js = {
-      'resources': {
-        'ng2.template': map
-      },
-      'sourceLanguage': 'en',
-      'targetLanguage': 'fr'
-    };
-    console.log(js);
-    return '<?xml version="1.0" encoding="UTF-8" ?>' + js2xliff(js, (err, res) => {
-      return res;
-    });
+    xlf += `</body>
+  </file>
+</xliff>`;
+    return xlf;
   }
 
 }
