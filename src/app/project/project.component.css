@@ -3,3 +3,7 @@ h2 { margin: 0 0 8px 0; }
 .info { font-size: small; }
 .select.right { text-align: right; }
 .select.left { margin: 16px 0; }
+
+.header { display: flex; }
+.info { flex-grow: 1; }
+.select { flex-grow: 0; }

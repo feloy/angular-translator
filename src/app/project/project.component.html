@@ -8,24 +8,29 @@
   </md-menu>
 </md-toolbar>
 <div class="main">
-  <div class="info">
-    <span i18n>repo:</span> {{project.repo}}<br><span i18n>i18n dir:</span> {{project.i18ndir}}<br><span i18n>source file:</span>    {{project.source}}<br><span i18n>translations:</span> {{project.translations}}
-    <div *ngIf="source" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</div>
-  </div>
 
+  <div class="header">
+    <div class="info">
+      <span i18n>repo:</span> {{project.repo}}
+      <div *ngIf="!translation"><span i18n>i18n dir:</span> {{project.i18ndir}}<br><span i18n>source file:</span>      {{project.source}}<br><span i18n>translations:</span> {{project.translations}}</div>
+      <div *ngIf="source && !translation" i18n="number of messages to translate">{source.msgs.length, plural, =0 {no message} =1 {1 message} other {{{source.msgs.length}} messages}}</div>
+    </div>
+
+    <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
+      <span *ngIf="!translation" i18n="label to pick a translation in a select">Select a translation: </span>
+      <md-select *ngIf="source" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
+        <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
+      </md-select>
+    </div>
+  </div>
+  
   <app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
 
-  <div class="select" [ngClass]="{'right': translation, 'left': !translation}">
-    <span *ngIf="!translation" i18n="label to pick a translation in a select">Select a translation: </span>
-    <md-select *ngIf="source" placeholder="translation" floatPlaceholder="never" (change)="onTranslationChanged($event.value)">
-      <md-option *ngFor="let translation of project.translations" [value]="translation">{{translation}}</md-option>
-    </md-select>
-  </div>
 
-  
   <router-outlet></router-outlet>
 
   <md-slide-toggle *ngIf="translation" color="primary" i18n="label for slide toggle" [(ngModel)]="untranslatedOnlyToggle">Untranslated only</md-slide-toggle>
 
-  <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation" [untranslatedOnly]="untranslatedOnlyToggle"></app-source-msgs-list>
+  <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation"
+    [untranslatedOnly]="untranslatedOnlyToggle"></app-source-msgs-list>
 </div>
