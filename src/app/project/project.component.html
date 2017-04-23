@@ -7,6 +7,9 @@
     <button md-menu-item (click)="exportAs('xlf')" i18n="Menu entry to export translation as XLIFF">Export as Xliff</button>
   </md-menu>
 </md-toolbar>
+
+<app-progression *ngIf="progression != null" [details]="progression" (close)="progression = null"></app-progression>
+  
 <div class="main">
 
   <div class="header">
@@ -23,9 +26,6 @@
       </md-select>
     </div>
   </div>
-  
-  <app-progression *ngIf="progression != null" [@enterAnimation]="progression != null" [details]="progression" (close)="progression = null"></app-progression>
-
 
   <router-outlet></router-outlet>
 

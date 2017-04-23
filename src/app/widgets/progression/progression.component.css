@@ -1,5 +1,4 @@
 .buttons { text-align: right; }
-.main { margin: 8px; border-radius: 8px; }
-.main.ok { background-color: #C5E1A5; }
+.main { margin: 0; }
+.main.ok { background-color: #C8E6C9; }
 .main.err { background-color: #FFCDD2; }
-.main.running {}
