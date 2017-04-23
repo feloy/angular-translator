@@ -63,6 +63,9 @@ import { LocationDetailsComponent } from './widgets/location-details/location-de
           { path: '', component: HomeComponent },
           { path: 'newproject', component: NewProjectComponent },
           {
+            path: 'project/:id/edit', component: NewProjectComponent, resolve: { project: ProjectResolve }
+          },
+          {
             path: 'project/:id', component: ProjectComponent, resolve: { project: ProjectResolve }, children: [
               { path: ':msgid', component: MsgEditComponent }
             ]

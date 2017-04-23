@@ -28,6 +28,20 @@ export class ProjectsService {
     return p.id;
   }
 
+  public update(id: number, p: Project) {
+    this.projects = this.projects.filter((pr: Project) => pr.id !== id);
+    p.id = id;
+    this.projects.push(p);
+    this.projects$.next(this.projects);
+    this.backend.projectsSave(this.projects);
+  }
+
+  public delete(id: number) {
+    this.projects = this.projects.filter((pr: Project) => pr.id !== id);
+    this.projects$.next(this.projects);
+    this.backend.projectsSave(this.projects);
+  }
+
   public get(id: number): Project {
     const list = this.projects.filter((p: Project) => p.id === id);
     if (list.length === 1) {
@@ -43,7 +57,7 @@ export class ProjectsService {
   }
 
   public setTranslatedMsg(id: string, value: string) {
-    const list = this.currentTranslation.msgs.filter( (m: Msg) => m.id === id);
+    const list = this.currentTranslation.msgs.filter((m: Msg) => m.id === id);
     if (list.length > 0) {
       list[0].content = value;
     } else {

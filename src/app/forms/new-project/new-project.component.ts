@@ -1,7 +1,10 @@
+import { Translation } from './../../models/translation';
+import { Project } from './../../models/project';
 import { ProjectsService } from './../../services/projects.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import 'rxjs/add/operator/pluck';
 
 @Component({
   selector: 'app-new-project',
@@ -9,6 +12,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./new-project.component.css']
 })
 export class NewProjectComponent implements OnInit {
+
+  public project: Project;
 
   form: FormGroup;
   iconCtrl: FormControl;
@@ -19,17 +24,21 @@ export class NewProjectComponent implements OnInit {
   translationsCtrl: FormControl;
 
   defaultIcon = 'favorite';
-  defaultName = '';
+  defaultName = 'translator';
   defaultRepo = 'Hackbit/angularattack2017-feloy';
   defaultI18ndir = 'src/i18n-xlf';
   defaultSource = 'messages.xlf';
   defaultTranslations = `messages.fr.xlf
 messages.en.xlf`;
 
-  constructor(private fb: FormBuilder, private router: Router, private projects: ProjectsService) { }
+  constructor(private fb: FormBuilder, private router: Router,
+    private route: ActivatedRoute, private projects: ProjectsService) { }
 
   ngOnInit() {
-    this.createForm();
+    this.route.data.pluck('project').subscribe((p: Project) => {
+      this.project = p;
+      this.createForm(p);
+    });
   }
 
   onAdd() {
@@ -44,17 +53,39 @@ messages.en.xlf`;
     this.router.navigate(['/project', id]);
   }
 
+  onSave() {
+    console.log(this.translationsCtrl.value);
+    this.projects.update(this.project.id, {
+      icon: this.iconCtrl.value,
+      name: this.nameCtrl.value,
+      repo: this.repoCtrl.value,
+      i18ndir: this.i18ndirCtrl.value,
+      source: this.sourceCtrl.value,
+      translations: this.translationsCtrl.value.split('\n')
+    });
+    this.router.navigate(['/project', this.project.id]);
+  }
+
   onCancel() {
+    if (this.project) {
+      this.router.navigate(['/project', this.project.id]);
+    } else {
+      this.router.navigate(['/']);
+    }
+  }
+
+  onDelete() {
+    this.projects.delete(this.project.id);
     this.router.navigate(['/']);
   }
 
-  private createForm() {
-    this.iconCtrl = new FormControl(this.defaultIcon, Validators.required);
-    this.nameCtrl = new FormControl(this.defaultName, Validators.required);
-    this.repoCtrl = new FormControl(this.defaultRepo, Validators.required);
-    this.i18ndirCtrl = new FormControl(this.defaultI18ndir, Validators.required);
-    this.sourceCtrl = new FormControl(this.defaultSource, Validators.required);
-    this.translationsCtrl = new FormControl(this.defaultTranslations, Validators.required);
+  private createForm(p: Project) {
+    this.iconCtrl = new FormControl(p ? p.icon : this.defaultIcon, Validators.required);
+    this.nameCtrl = new FormControl(p ? p.name : this.defaultName, Validators.required);
+    this.repoCtrl = new FormControl(p ? p.repo : this.defaultRepo, Validators.required);
+    this.i18ndirCtrl = new FormControl(p ? p.i18ndir : this.defaultI18ndir, Validators.required);
+    this.sourceCtrl = new FormControl(p ? p.source : this.defaultSource, Validators.required);
+    this.translationsCtrl = new FormControl(p ? p.translations.join('\n') : this.defaultTranslations, Validators.required);
     this.form = this.fb.group({
       icon: this.iconCtrl,
       name: this.nameCtrl,

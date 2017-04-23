@@ -1,4 +1,5 @@
-<md-toolbar i18n="Title of form used to create a new project">Create new project</md-toolbar>
+<md-toolbar *ngIf="!project" i18n="Title of form used to create a new project">Create new project</md-toolbar>
+<md-toolbar *ngIf="project" i18n="Title of form used to create a new project">{{project.name}}</md-toolbar>
 
 <div class="main">
   <form [formGroup]="form">
@@ -21,8 +22,10 @@
       <textarea mdInput mdTextareaAutosize placeholder="translations files names" formControlName="translations"></textarea>
     </md-input-container>
     <div class="buttons">
-      <button md-button (click)="onCancel()" i18n="button to cancel form edition">Cancel</button>
-      <button md-raised-button color="primary" (click)="onAdd()" [disabled]="!form.valid || form.pristine" i18n="button to create new project">Add</button>
+      <button type="button" md-button color="warn" (click)="onDelete()" i18n="button to delete project">Delete</button>
+      <button type="button" md-button (click)="onCancel()" i18n="button to cancel form edition">Cancel</button>
+      <button *ngIf="!project" type="submit" md-raised-button color="primary" (click)="onAdd()" [disabled]="!form.valid" i18n="button to create new project">Add</button>
+      <button *ngIf="project" type="submit" md-raised-button color="primary" (click)="onSave()" [disabled]="!form.valid" i18n="button to save existing project">Save</button>
     </div>
   </form>
 </div>

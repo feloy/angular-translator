@@ -2,6 +2,7 @@
   <span class="app-fill-remaining-space"></span>
   <button (click)="onReload()" md-icon-button i18n-title="Title on Reload source icon" title="Reload source"><md-icon>autorenew</md-icon></button>
   <button md-icon-button i18n-title="Title on Export icon" title="Export current translation" [disabled]="!translation" [mdMenuTriggerFor]="exportMenu"><md-icon>file_download</md-icon></button>
+  <button style="opacity: 0.87"  (click)="onEdit()" md-icon-button i18n-title="Title on Edit project icon" title="Edit project settings"><md-icon>settings</md-icon></button>
   <md-menu #exportMenu="mdMenu">
     <button md-menu-item (click)="exportAs('xmb')" i18n="Menu entry to export translation as XMB">Export as XMB</button>
     <button md-menu-item (click)="exportAs('xlf')" i18n="Menu entry to export translation as XLIFF">Export as Xliff</button>
