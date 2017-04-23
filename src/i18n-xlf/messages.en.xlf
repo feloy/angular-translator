@@ -14,6 +14,10 @@
         <source>New project...</source>
         <target>New project...</target>
       </trans-unit>
+      <trans-unit id="004b222ff9ef9dd4771b777950ca1d0e4cd4348a" datatype="html">
+        <source>About</source>
+        <target>About</target>
+      </trans-unit>
       <trans-unit id="38717fe18c338f68dbec24a0c196d614e08d5959" datatype="html">
         <source>Interface Language</source>
         <target>Interface Language</target>
@@ -21,6 +25,10 @@
       <trans-unit id="2e1546d8b73413d4e8cc90cf959884c67655f721" datatype="html">
         <source>Create new project</source>
         <target>Create new project</target>
+      </trans-unit>
+      <trans-unit id="19f8eb33feeb9169d89ef71517146736d769b7f5" datatype="html">
+        <source><x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> edition</source>
+        <target><x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> edition</target>
       </trans-unit>
       <trans-unit id="6fc2c1a8969bb0645d798d2066d264882d206fcc" datatype="html">
         <source>name</source>
@@ -42,6 +50,10 @@
         <source>source file name</source>
         <target>source file name</target>
       </trans-unit>
+      <trans-unit id="826b25211922a1b46436589233cb6f1a163d89b7" datatype="html">
+        <source>Delete</source>
+        <target>Delete</target>
+      </trans-unit>
       <trans-unit id="d7b35c384aecd25a516200d6921836374613dfe7" datatype="html">
         <source>Cancel</source>
         <target>Cancel</target>
@@ -49,6 +61,10 @@
       <trans-unit id="f6755cff4957d5c3c89bafce5651f1b6fa2b1fd9" datatype="html">
         <source>Add</source>
         <target>Add</target>
+      </trans-unit>
+      <trans-unit id="52c9a103b812f258bcddc3d90a6e3f46871d25fe" datatype="html">
+        <source>Save</source>
+        <target>Save</target>
       </trans-unit>
       <trans-unit id="cd4828aa8a53cb59ac0690fc3406344e7cdfa7ac" datatype="html">
         <source>Reload source</source>
@@ -58,6 +74,10 @@
         <source>Export current translation</source>
         <target>Export current translation</target>
       </trans-unit>
+      <trans-unit id="db3a3973f17dd719b950b9780af96c39a4213f63" datatype="html">
+        <source>Edit project settings</source>
+        <target>Edit project settings</target>
+      </trans-unit>
       <trans-unit id="940cb77503ffb298e1a937cb03adbb30aaed5b13" datatype="html">
         <source>Export as XMB</source>
         <target>Export as XMB</target>
@@ -65,22 +85,6 @@
       <trans-unit id="02f7ed0809aa6574b91bfffd1c606a68628f651a" datatype="html">
         <source>Export as Xliff</source>
         <target>Export as Xliff</target>
-      </trans-unit>
-      <trans-unit id="a2f358ba57fac9600cf09e3ba56cf5769c196032" datatype="html">
-        <source>repo:</source>
-        <target>repo:</target>
-      </trans-unit>
-      <trans-unit id="13acd2cb41d8e13276f98c81163175960949c9cc" datatype="html">
-        <source>i18n dir:</source>
-        <target>i18n dir:</target>
-      </trans-unit>
-      <trans-unit id="a1afad68767b9026b2681274cba81cd7e2ec1789" datatype="html">
-        <source>source file:</source>
-        <target>source file:</target>
-      </trans-unit>
-      <trans-unit id="60726d99044c1649e0b4d5ec8e05b875e6477322" datatype="html">
-        <source>translations:</source>
-        <target>translations:</target>
       </trans-unit>
       <trans-unit id="13cad97dec768f600ed4a5af6069abb37d6cfc41" datatype="html">
         <source>{VAR_PLURAL, plural, =0 {no message} =1 {1 message} other {<x xmlns="urn:oasis:names:tc:xliff:document:1.2" id="INTERPOLATION"/> messages} }</source>

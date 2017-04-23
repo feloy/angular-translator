@@ -82,8 +82,4 @@ export class MsgEditComponent implements OnInit {
       tr: this.trMsg.content
     });
   }
-
-  public locationsDetailsChange() {
-
-  }
 }

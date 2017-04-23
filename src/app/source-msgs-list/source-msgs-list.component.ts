@@ -13,8 +13,7 @@ export class SourceMsgsListComponent implements OnInit {
   @Input() source: Source;
   @Input() translation: Translation;
   @Input() untranslatedOnly: boolean;
-
-  @Output() selected = new EventEmitter();
+  @Input() projectId: number;
 
   constructor() { }
 

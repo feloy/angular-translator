@@ -31,6 +31,6 @@
 
   <md-slide-toggle class="untrans" *ngIf="translation" color="primary" i18n="label for slide toggle" [(ngModel)]="untranslatedOnlyToggle">Untranslated only</md-slide-toggle>
 
-  <app-source-msgs-list *ngIf="source && translation" (selected)="onMsgClicked($event)" [source]="source" [translation]="translation"
-    [untranslatedOnly]="untranslatedOnlyToggle"></app-source-msgs-list>
+  <app-source-msgs-list *ngIf="source && translation" [source]="source" [translation]="translation"
+    [untranslatedOnly]="untranslatedOnlyToggle" [projectId]="project.id"></app-source-msgs-list>
 </div>

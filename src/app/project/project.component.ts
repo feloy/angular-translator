@@ -82,10 +82,6 @@ export class ProjectComponent implements OnInit, OnDestroy {
     }, 0);
   }
 
-  public onMsgClicked(msgId: string) {
-    this.navigateTo(msgId);
-  }
-
   private navigateTo(msgId: string) {
     this.router.navigate(['/project', this.project.id, msgId]);
   }
