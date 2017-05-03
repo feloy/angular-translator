@@ -23,7 +23,7 @@ First declare a new project in the application, with `New Project...` in the sid
 
 - **name**: a name that will appear in the sidenav - be clear and concise,
 - **icon**: a name of a Material icon - select one here: https://material.io/icons/,
-- **github repo**: the github repository where the app will get the files, for example `Hackbit/angularattack2017-feloy` for translating this app,
+- **github repo**: the github repository where the app will get the files, for example `feloy/angular-translator` for translating this app,
 - **i18n directory**: the directory inside the repository where source and translations files are placed, `src/i18n`generally,
 - **source file name**: the name of the source file, `messages.xmb` or `messages.xlf`generally,
 - **translations files names**: the names of the translations files you want to create, one for each language you want to translate your app in - they do not need to exist in the repository.

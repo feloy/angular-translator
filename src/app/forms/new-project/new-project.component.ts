@@ -25,7 +25,7 @@ export class NewProjectComponent implements OnInit {
 
   defaultIcon = 'favorite';
   defaultName = 'translator';
-  defaultRepo = 'Hackbit/angularattack2017-feloy';
+  defaultRepo = 'feloy/angular-translator';
   defaultI18ndir = 'src/i18n-xmb';
   defaultSource = 'messages.xmb';
   defaultTranslations = `messages.fr.xmb
