@@ -24,7 +24,7 @@
     "@angular/core": ">=4.1.0-beta",
     "@angular/forms": ">=4.1.0-beta",
     "@angular/http": ">=4.1.0-beta",
-    "@angular/material": "2.0.0-beta.3",
+    "@angular/material": "2.0.0-beta.5",
     "@angular/platform-browser": ">=4.1.0-beta",
     "@angular/platform-browser-dynamic": ">=4.1.0-beta",
     "@angular/router": ">=4.1.0-beta",
