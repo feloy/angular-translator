@@ -1,5 +1,6 @@
 import { StateService } from './../services/state.service';
-import { Component, OnInit, OnDestroy, ViewChild } from '@angular/core';
+import { Component, OnInit, OnDestroy, ViewChild, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { Subscription } from 'rxjs/Subscription';
 import { Router } from '@angular/router';
 import { MdSidenav } from '@angular/material';
@@ -20,19 +21,20 @@ export class FrameComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    this.subs.push(this.state.deviceType$.subscribe(t => {
-      this.isMobile = t === 'mobile';
-      if (this.isMobile) {
-        this.sidenav.mode = 'over';
-        if (this.router.url !== '/') {
-          this.sidenav.close();
+    if (isPlatformBrowser(PLATFORM_ID)) {
+      this.subs.push(this.state.deviceType$.subscribe(t => {
+        this.isMobile = t === 'mobile';
+        if (this.isMobile) {
+          this.sidenav.mode = 'over';
+          if (this.router.url !== '/') {
+            this.sidenav.close();
+          }
+        } else {
+          this.sidenav.mode = 'side';
+          this.sidenav.open();
         }
-      } else {
-        this.sidenav.mode = 'side';
-        this.sidenav.open();
-      }
-    }));
-
+      }));
+    }
   }
 
   public onSidenavClicked() {

@@ -1,4 +1,5 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable, EventEmitter, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
@@ -14,12 +15,14 @@ export class StateService {
   }
 
   private initDeviceType() {
-    Observable.fromEvent(window, 'resize')
-      .startWith({ target: { innerWidth: window.innerWidth } })
-      .debounceTime(300)
-      .map(event => this.convertWidthToDeviceType(event))
-      .distinctUntilChanged()
-      .subscribe((device: string) => this.deviceType$.next(device));
+    if (isPlatformBrowser(PLATFORM_ID)) {
+      Observable.fromEvent(window, 'resize')
+        .startWith({ target: { innerWidth: window.innerWidth } })
+        .debounceTime(300)
+        .map(event => this.convertWidthToDeviceType(event))
+        .distinctUntilChanged()
+        .subscribe((device: string) => this.deviceType$.next(device));
+    }
   }
 
   private convertWidthToDeviceType(e) {

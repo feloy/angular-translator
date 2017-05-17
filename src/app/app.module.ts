@@ -9,21 +9,9 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
-import {
-  MdButtonModule,
-  MdCardModule,
-  MdIconModule,
-  MdInputModule,
-  MdListModule,
-  MdMenuModule,
-  MdSelectModule,
-  MdSidenavModule,
-  MdSlideToggleModule,
-  MdSnackBarModule,
-  MdToolbarModule,
-} from '@angular/material';
+import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { FrameComponent } from './frame/frame.component';
@@ -56,7 +44,9 @@ import { AboutComponent } from './about/about.component';
     AboutComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({
+        appId: 'angular-translator'
+    }),
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
@@ -81,19 +71,8 @@ import { AboutComponent } from './about/about.component';
         ]
       }
     ]),
-    BrowserAnimationsModule,
-    // Material
-    MdButtonModule,
-    MdCardModule,
-    MdIconModule,
-    MdInputModule,
-    MdListModule,
-    MdMenuModule,
-    MdSelectModule,
-    MdSidenavModule,
-    MdSlideToggleModule,
-    MdSnackBarModule,
-    MdToolbarModule,
+    NoopAnimationsModule,
+    MaterialModule
   ],
   providers: [
     BackendService,
