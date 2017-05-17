@@ -8,6 +8,7 @@ find . -name "*.ngstyle.ts" -delete
 
 ./node_modules/.bin/ngc
 webpack
+mkdir -p final/$LANG
 cp -R dist/$LANG/* final/$LANG
 node dist/main.js dist/$LANG/index.html final/$LANG /
 node dist/main.js dist/$LANG/index.html final/$LANG about
