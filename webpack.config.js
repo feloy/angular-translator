@@ -8,7 +8,7 @@ module.exports = {
     },
     target: 'node',
     output: {
-        path: 'dist',
+        path: __dirname + '/dist',
         filename: '[name].js'
     },
     plugins: [
