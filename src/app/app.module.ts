@@ -1,6 +1,5 @@
 import { CanDeactivateProjectService } from './services/can-deactivate-project.service';
 import { GithubService } from './services/github.service';
-import { StateService } from './services/state.service';
 import { ProjectResolve } from './project/project-resolve';
 import { BackendService } from './services/backend.service';
 import { ProjectsService } from './services/projects.service';
@@ -78,7 +77,6 @@ import { AboutComponent } from './about/about.component';
     BackendService,
     GithubService,
     ProjectsService,
-    StateService,
     ProjectResolve,
     CanDeactivateProjectService
   ],
