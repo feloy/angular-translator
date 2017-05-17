@@ -9,6 +9,7 @@ addons:
   ssh_known_hosts: kirikou.elol.fr
 before_script:
 - yarn global add @angular/cli
+- npm install webpack
 test:
   - npm run test
 before_deploy:
