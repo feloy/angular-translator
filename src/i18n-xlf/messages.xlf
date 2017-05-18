@@ -320,6 +320,56 @@
         </context-group>
         <note priority="1" from="description">button to save translation</note>
       </trans-unit>
+      <trans-unit id="d51ad0aacd7173645a7f909d12bd3ebdeb9de592" datatype="html">
+        <source>
+<x id="START_PARAGRAPH" ctype="x-p"/><x id="START_TAG_STRONG" ctype="x-strong"/>Angular Translator<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> helps you translating your Angular application.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>Translation applications like this one are generally not specialized for a specific framework.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>This application prefers to specialize in the translation of Angular applications only, so it can integrate perfectly with
+  the framework.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_HEADING_LEVEL2" ctype="x-h2"/>How it works<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>The <x id="START_TAG_VAR" ctype="x-var"/>ng-xi18n<x id="CLOSE_TAG_VAR" ctype="x-var"/> Angular tool is responsible for extracting from the app sources the terms to translate. This tool creates a <x id="START_TAG_VAR" ctype="x-var"/>messages.xmb<x id="CLOSE_TAG_VAR" ctype="x-var"/> (or <x id="START_TAG_VAR" ctype="x-var"/>messages.xlf<x id="CLOSE_TAG_VAR" ctype="x-var"/>) file containing all the necessary information for the human translator to do his job.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/><x id="START_TAG_STRONG" ctype="x-strong"/>Angular Translator<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> gets this <x id="START_TAG_VAR" ctype="x-var"/>messages.xmb<x id="CLOSE_TAG_VAR" ctype="x-var"/> file and uses it at the reference for the terms that have to be translated. It is called the <x id="START_EMPHASISED_TEXT" ctype="x-em"/>source file<x id="CLOSE_EMPHASISED_TEXT" ctype="x-em"/> in the app.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>In <x id="START_TAG_STRONG" ctype="x-strong"/>Angular Translator<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>, you then have to declare the different file names where the different translations for specific languages will be stored. When you begin, you do not need to create these translation files, the app will do that for you. They all called the <x id="START_EMPHASISED_TEXT" ctype="x-em"/>translations files<x id="CLOSE_EMPHASISED_TEXT" ctype="x-em"/> in the app.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>When you have finished translating for a specific language, you can export the translation file for this language and place it beside your source file in your sources repository. If you decide to work again on the translations for this same language, the translations you have made earlier will be extracted from this translation file.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>When you update your app and add or remove terms to translate and regenerate the <x id="START_TAG_VAR" ctype="x-var"/>messages.xmb<x id="CLOSE_TAG_VAR" ctype="x-var"/> source file with <x id="START_TAG_VAR" ctype="x-var"/>ng-xi18n<x id="CLOSE_TAG_VAR" ctype="x-var"/>, you do not need to merge the differences to your translation files. Because <x id="START_TAG_STRONG" ctype="x-strong"/>Angular Translator<x id="CLOSE_TAG_STRONG" ctype="x-strong"/> gets the <x id="START_EMPHASISED_TEXT" ctype="x-em"/>source file<x id="CLOSE_EMPHASISED_TEXT" ctype="x-em"/> as the reference, it will handle correclty the terms removed or added.<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_HEADING_LEVEL2" ctype="x-h2"/>Usage<x id="CLOSE_HEADING_LEVEL2" ctype="x-h2"/>
+
+<x id="START_PARAGRAPH" ctype="x-p"/>First declare a new project in the application, with <x id="START_TAG_VAR" ctype="x-var"/>New Project...<x id="CLOSE_TAG_VAR" ctype="x-var"/> in the sidenav. You will have to declare some information for this new project:<x id="CLOSE_PARAGRAPH" ctype="x-p"/>
+
+<x id="START_UNORDERED_LIST" ctype="x-ul"/>
+<x id="START_LIST_ITEM" ctype="x-li"/><x id="START_TAG_STRONG" ctype="x-strong"/>name<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>: a name that will appear in the sidenav - be clear and concise,
+<x id="CLOSE_LIST_ITEM" ctype="x-li"/><x id="START_LIST_ITEM" ctype="x-li"/><x id="START_TAG_STRONG" ctype="x-strong"/>icon<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>: a name of a Material icon - select one here: https://material.io/icons/,
+<x id="CLOSE_LIST_ITEM" ctype="x-li"/><x id="START_LIST_ITEM" ctype="x-li"/><x id="START_TAG_STRONG" ctype="x-strong"/>github repo<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>: the github repository where the app will get the files, for example <x id="START_TAG_VAR" ctype="x-var"/>feloy/angular-translator<x id="CLOSE_TAG_VAR" ctype="x-var"/> for translating this app,
+<x id="CLOSE_LIST_ITEM" ctype="x-li"/><x id="START_LIST_ITEM" ctype="x-li"/><x id="START_TAG_STRONG" ctype="x-strong"/>i18n directory<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>: the directory inside the repository where source and translations files are placed, <x id="START_TAG_VAR" ctype="x-var"/>src/i18n<x id="CLOSE_TAG_VAR" ctype="x-var"/>generally,
+<x id="CLOSE_LIST_ITEM" ctype="x-li"/><x id="START_LIST_ITEM" ctype="x-li"/><x id="START_TAG_STRONG" ctype="x-strong"/>source file name<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>: the name of the source file, <x id="START_TAG_VAR" ctype="x-var"/>messages.xmb<x id="CLOSE_TAG_VAR" ctype="x-var"/> or <x id="START_TAG_VAR" ctype="x-var"/>messages.xlf<x id="CLOSE_TAG_VAR" ctype="x-var"/>generally,
+<x id="CLOSE_LIST_ITEM" ctype="x-li"/><x id="START_LIST_ITEM" ctype="x-li"/><x id="START_TAG_STRONG" ctype="x-strong"/>translations files names<x id="CLOSE_TAG_STRONG" ctype="x-strong"/>: the names of the translations files you want to create, one for each language you want to translate your app in - they do not need to exist in the repository.
+<x id="CLOSE_LIST_ITEM" ctype="x-li"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul"/>
+
+Once your project created, the app will load the contents of the <x id="START_EMPHASISED_TEXT" ctype="x-em"/>source file<x id="CLOSE_EMPHASISED_TEXT" ctype="x-em"/> and extract the terms to translate.
+
+You then have to choose one language you want to work with, based on the list of files you have declared as translations files, using the select listing the different translations files names.
+
+If the translation file exists in the repository, the app loads it and extracts the translations already done. 
+
+You can now begin to translate the different terms.
+
+When you are done, you can use the <x id="START_TAG_VAR" ctype="x-var"/>Extract<x id="CLOSE_TAG_VAR" ctype="x-var"/> button on the upper-right corner to extract the translations in the current language in a local file. You can now commit this file in your repository.
+</source>
+        <target/>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/home/home.component.ts</context>
+          <context context-type="linenumber">1</context>
+        </context-group>
+      </trans-unit>
     </body>
   </file>
 </xliff>
