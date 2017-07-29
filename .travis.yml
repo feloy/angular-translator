@@ -13,6 +13,7 @@ before_script:
 test:
   - npm run test
 before_deploy:
+- mkdir -p dist/en dist/fr
 - npm run build:all
 - openssl aes-256-cbc -K $encrypted_4f7d8ed15ece_key -iv $encrypted_4f7d8ed15ece_iv
   -in deploy/deploy_rsa.enc -out deploy/deploy_rsa -d
