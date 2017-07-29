@@ -1,7 +1,7 @@
 import 'zone.js/dist/zone-node';
 import { renderModuleFactory } from '@angular/platform-server'
 import { enableProdMode } from '@angular/core'
-import { AppServerModuleNgFactory } from './src/app.server.module.ngfactory'
+import { AppModuleNgFactory } from './dist/server/en/main.bundle'
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -17,7 +17,7 @@ if (args.length != 3) {
     process.exit();
 }
 const indexFileContent = fs.readFileSync(args[0], 'utf8');
-renderModuleFactory(AppServerModuleNgFactory, {
+renderModuleFactory(AppModuleNgFactory, {
     document: indexFileContent,
     url: args[2]
 }).then(string => {

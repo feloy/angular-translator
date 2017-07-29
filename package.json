@@ -12,10 +12,8 @@
     "extract-i18n:xlf": "ng xi18n --output-path=src/i18n-xlf --locale en --i18n-format=xlf",
     "extract-i18n:xmb": "ng xi18n --output-path=src/i18n-xmb --locale en --i18n-format=xmb",
     "extract-i18n": "npm run extract-i18n:xlf && npm run extract-i18n:xmb",
-    "build:en": "ng build --no-progress --output-path=dist/en -aot -prod --bh /en/ --i18n-file=src/i18n-xlf/messages.en.xlf --i18n-format=xlf --locale=en; npm run build:universal:en",
-    "build:fr": "ng build --no-progress --output-path=dist/fr -aot -prod --bh /fr/ --i18n-file=src/i18n-xlf/messages.fr.xlf --i18n-format=xlf --locale=fr; npm run build:universal:fr",
-    "build:universal:en": "./rebuild.sh en",
-    "build:universal:fr": "./rebuild.sh fr",
+    "build:en": "ng build --no-progress --output-path=dist/en -aot -prod --bh /en/ --i18n-file=src/i18n-xlf/messages.en.xlf --i18n-format=xlf --locale=en",
+    "build:fr": "ng build --no-progress --output-path=dist/fr -aot -prod --bh /fr/ --i18n-file=src/i18n-xlf/messages.fr.xlf --i18n-format=xlf --locale=fr",
     "build:all": "npm run build:en && npm run build:fr"
   },
   "private": true,

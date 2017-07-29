@@ -9,6 +9,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { ServerModule } from '@angular/platform-server';
 
 import { MaterialModule } from '@angular/material';
 
@@ -46,6 +47,7 @@ import { AboutComponent } from './about/about.component';
     BrowserModule.withServerTransition({
         appId: 'angular-translator'
     }),
+    ServerModule,
     ReactiveFormsModule,
     FormsModule,
     HttpModule,
