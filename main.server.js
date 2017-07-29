@@ -1,12 +1,13 @@
-import 'zone.js/dist/zone-node';
-import { renderModuleFactory } from '@angular/platform-server'
-import { enableProdMode } from '@angular/core'
-import { AppModuleNgFactory } from './dist/server/en/main.bundle'
-import * as fs from 'fs';
-import * as path from 'path';
+require('zone.js/dist/zone-node');
+require('reflect-metadata');
+const { renderModuleFactory } = require('@angular/platform-server');
+const { enableProdMode } = require('@angular/core');
+const { AppServerModuleNgFactory } = require('./dist-ssr/en/main.bundle');
+const fs = require('fs');
+const path = require('path');
 
 /* workaround */
-import { MdSidenav } from '@angular/material';
+const { MdSidenav } = require('@angular/material');
 MdSidenav.prototype.ngAfterContentInit = function () {}
 /* /workaround */
 
@@ -17,7 +18,7 @@ if (args.length != 3) {
     process.exit();
 }
 const indexFileContent = fs.readFileSync(args[0], 'utf8');
-renderModuleFactory(AppModuleNgFactory, {
+renderModuleFactory(AppServerModuleNgFactory, {
     document: indexFileContent,
     url: args[2]
 }).then(string => {

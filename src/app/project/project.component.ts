@@ -14,6 +14,9 @@ import { Subscription } from 'rxjs/Subscription';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/pluck';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/map';
+import 'rxjs/add/observable/merge';
 import * as FileSaver from 'file-saver';
 
 @Component({
