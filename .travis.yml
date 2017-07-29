@@ -8,7 +8,8 @@ env:
 addons:
   ssh_known_hosts: kirikou.elol.fr
 before_script:
-- yarn global add @angular/cli
+- yarn global add @angular/cli@1.3.0-rc.3
+- yarn
 - npm install webpack
 test:
   - npm run test
