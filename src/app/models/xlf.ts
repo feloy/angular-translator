@@ -56,6 +56,7 @@ export class Xlf {
       }
       return source;
     } catch (e) {
+      console.log(e);
       return null;
     }
   }
@@ -80,6 +81,7 @@ export class Xlf {
       }
       return translation;
     } catch (e) {
+      console.log(e);
       return null;
     }
   }
